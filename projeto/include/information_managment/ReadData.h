@@ -5,14 +5,23 @@
 #ifndef PROJETODA_READDATA_H
 #define PROJETODA_READDATA_H
 
-#endif //PROJETODA_READDATA_H
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <iterator>
+//#include "../graph/Graph.h"
+
+using namespace std;
 
 class ReadData {
 public:
     ReadData();
 
-    void readNetworkCSV();
+    void readNetworkCSV(const string& filename);
 
-    void readStationsCSV();
+    void readStationsCSV(const string& filename);
 
 };
+
+#endif //PROJETODA_READDATA_H

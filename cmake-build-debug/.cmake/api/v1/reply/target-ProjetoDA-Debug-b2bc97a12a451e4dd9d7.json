@@ -118,7 +118,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "projeto/src/information_managment/ReadData.h",
+			"path" : "projeto/include/information_managment/ReadData.h",
 			"sourceGroupIndex" : 1
 		}
 	],

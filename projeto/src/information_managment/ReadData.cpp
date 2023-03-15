@@ -4,10 +4,11 @@
 
 #include "../../include/information_managment/ReadData.h"
 
-
+/*
 ReadData::ReadData() {
 
-    readNetworkCSV("../project/data/airlines.csv");
-    readStationsCSV("../project/data/airports.csv");
+    readNetworkCSV("../projeto/data/network.csv");
+    readStationsCSV("../projeto/data/stations.csv");
 
 }
+ */
