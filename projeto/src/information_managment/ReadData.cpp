@@ -72,3 +72,7 @@ void ReadData::readNetworkCSV(const string &filename) {
         file.close();
     }
 }
+
+const Graph &ReadData::getGraph() const {
+    return graph;
+}

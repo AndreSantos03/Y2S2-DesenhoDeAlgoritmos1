@@ -27,6 +27,8 @@ public:
 
     void readNetworkCSV(const string& filename);
 
+    const Graph &getGraph() const;
+
 };
 
 #endif //PROJETODA_READDATA_H
