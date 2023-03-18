@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ProjetoDA.dir/projeto/main.cpp.obj"
   "CMakeFiles/ProjetoDA.dir/projeto/main.cpp.obj.d"
+  "CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj"
+  "CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj.d"
+  "CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj"
+  "CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj.d"
+  "CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj"
+  "CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj.d"
   "CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.obj"
   "CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.obj.d"
   "ProjetoDA.exe"

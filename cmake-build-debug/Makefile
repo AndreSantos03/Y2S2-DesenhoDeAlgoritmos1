@@ -152,6 +152,78 @@ projeto/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/main.cpp.s
 .PHONY : projeto/main.cpp.s
 
+projeto/src/graph/Graph.obj: projeto/src/graph/Graph.cpp.obj
+.PHONY : projeto/src/graph/Graph.obj
+
+# target to build an object file
+projeto/src/graph/Graph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj
+.PHONY : projeto/src/graph/Graph.cpp.obj
+
+projeto/src/graph/Graph.i: projeto/src/graph/Graph.cpp.i
+.PHONY : projeto/src/graph/Graph.i
+
+# target to preprocess a source file
+projeto/src/graph/Graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.i
+.PHONY : projeto/src/graph/Graph.cpp.i
+
+projeto/src/graph/Graph.s: projeto/src/graph/Graph.cpp.s
+.PHONY : projeto/src/graph/Graph.s
+
+# target to generate assembly for a file
+projeto/src/graph/Graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.s
+.PHONY : projeto/src/graph/Graph.cpp.s
+
+projeto/src/graph/Station.obj: projeto/src/graph/Station.cpp.obj
+.PHONY : projeto/src/graph/Station.obj
+
+# target to build an object file
+projeto/src/graph/Station.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj
+.PHONY : projeto/src/graph/Station.cpp.obj
+
+projeto/src/graph/Station.i: projeto/src/graph/Station.cpp.i
+.PHONY : projeto/src/graph/Station.i
+
+# target to preprocess a source file
+projeto/src/graph/Station.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.i
+.PHONY : projeto/src/graph/Station.cpp.i
+
+projeto/src/graph/Station.s: projeto/src/graph/Station.cpp.s
+.PHONY : projeto/src/graph/Station.s
+
+# target to generate assembly for a file
+projeto/src/graph/Station.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.s
+.PHONY : projeto/src/graph/Station.cpp.s
+
+projeto/src/graph/Trip.obj: projeto/src/graph/Trip.cpp.obj
+.PHONY : projeto/src/graph/Trip.obj
+
+# target to build an object file
+projeto/src/graph/Trip.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj
+.PHONY : projeto/src/graph/Trip.cpp.obj
+
+projeto/src/graph/Trip.i: projeto/src/graph/Trip.cpp.i
+.PHONY : projeto/src/graph/Trip.i
+
+# target to preprocess a source file
+projeto/src/graph/Trip.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.i
+.PHONY : projeto/src/graph/Trip.cpp.i
+
+projeto/src/graph/Trip.s: projeto/src/graph/Trip.cpp.s
+.PHONY : projeto/src/graph/Trip.s
+
+# target to generate assembly for a file
+projeto/src/graph/Trip.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetoDA.dir\build.make CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.s
+.PHONY : projeto/src/graph/Trip.cpp.s
+
 projeto/src/information_managment/ReadData.obj: projeto/src/information_managment/ReadData.cpp.obj
 .PHONY : projeto/src/information_managment/ReadData.obj
 
@@ -188,6 +260,15 @@ help:
 	@echo ... projeto/main.obj
 	@echo ... projeto/main.i
 	@echo ... projeto/main.s
+	@echo ... projeto/src/graph/Graph.obj
+	@echo ... projeto/src/graph/Graph.i
+	@echo ... projeto/src/graph/Graph.s
+	@echo ... projeto/src/graph/Station.obj
+	@echo ... projeto/src/graph/Station.i
+	@echo ... projeto/src/graph/Station.s
+	@echo ... projeto/src/graph/Trip.obj
+	@echo ... projeto/src/graph/Trip.i
+	@echo ... projeto/src/graph/Trip.s
 	@echo ... projeto/src/information_managment/ReadData.obj
 	@echo ... projeto/src/information_managment/ReadData.i
 	@echo ... projeto/src/information_managment/ReadData.s

@@ -96,21 +96,69 @@ CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\NASA\Desktop\DA_Project\projeto\src\information_managment\ReadData.cpp -o CMakeFiles\ProjetoDA.dir\projeto\src\information_managment\ReadData.cpp.s
 
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj: CMakeFiles/ProjetoDA.dir/flags.make
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj: C:/Users/NASA/Desktop/DA_Project/projeto/src/graph/Graph.cpp
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj: CMakeFiles/ProjetoDA.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\NASA\Desktop\DA_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj -MF CMakeFiles\ProjetoDA.dir\projeto\src\graph\Graph.cpp.obj.d -o CMakeFiles\ProjetoDA.dir\projeto\src\graph\Graph.cpp.obj -c C:\Users\NASA\Desktop\DA_Project\projeto\src\graph\Graph.cpp
+
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\NASA\Desktop\DA_Project\projeto\src\graph\Graph.cpp > CMakeFiles\ProjetoDA.dir\projeto\src\graph\Graph.cpp.i
+
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\NASA\Desktop\DA_Project\projeto\src\graph\Graph.cpp -o CMakeFiles\ProjetoDA.dir\projeto\src\graph\Graph.cpp.s
+
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj: CMakeFiles/ProjetoDA.dir/flags.make
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj: C:/Users/NASA/Desktop/DA_Project/projeto/src/graph/Station.cpp
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj: CMakeFiles/ProjetoDA.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\NASA\Desktop\DA_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj -MF CMakeFiles\ProjetoDA.dir\projeto\src\graph\Station.cpp.obj.d -o CMakeFiles\ProjetoDA.dir\projeto\src\graph\Station.cpp.obj -c C:\Users\NASA\Desktop\DA_Project\projeto\src\graph\Station.cpp
+
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\NASA\Desktop\DA_Project\projeto\src\graph\Station.cpp > CMakeFiles\ProjetoDA.dir\projeto\src\graph\Station.cpp.i
+
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\NASA\Desktop\DA_Project\projeto\src\graph\Station.cpp -o CMakeFiles\ProjetoDA.dir\projeto\src\graph\Station.cpp.s
+
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj: CMakeFiles/ProjetoDA.dir/flags.make
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj: C:/Users/NASA/Desktop/DA_Project/projeto/src/graph/Trip.cpp
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj: CMakeFiles/ProjetoDA.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\NASA\Desktop\DA_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj -MF CMakeFiles\ProjetoDA.dir\projeto\src\graph\Trip.cpp.obj.d -o CMakeFiles\ProjetoDA.dir\projeto\src\graph\Trip.cpp.obj -c C:\Users\NASA\Desktop\DA_Project\projeto\src\graph\Trip.cpp
+
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\NASA\Desktop\DA_Project\projeto\src\graph\Trip.cpp > CMakeFiles\ProjetoDA.dir\projeto\src\graph\Trip.cpp.i
+
+CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\NASA\Desktop\DA_Project\projeto\src\graph\Trip.cpp -o CMakeFiles\ProjetoDA.dir\projeto\src\graph\Trip.cpp.s
+
 # Object files for target ProjetoDA
 ProjetoDA_OBJECTS = \
 "CMakeFiles/ProjetoDA.dir/projeto/main.cpp.obj" \
-"CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.obj"
+"CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.obj" \
+"CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj" \
+"CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj" \
+"CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj"
 
 # External object files for target ProjetoDA
 ProjetoDA_EXTERNAL_OBJECTS =
 
 ProjetoDA.exe: CMakeFiles/ProjetoDA.dir/projeto/main.cpp.obj
 ProjetoDA.exe: CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.obj
+ProjetoDA.exe: CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj
+ProjetoDA.exe: CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station.cpp.obj
+ProjetoDA.exe: CMakeFiles/ProjetoDA.dir/projeto/src/graph/Trip.cpp.obj
 ProjetoDA.exe: CMakeFiles/ProjetoDA.dir/build.make
 ProjetoDA.exe: CMakeFiles/ProjetoDA.dir/linklibs.rsp
 ProjetoDA.exe: CMakeFiles/ProjetoDA.dir/objects1.rsp
 ProjetoDA.exe: CMakeFiles/ProjetoDA.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\NASA\Desktop\DA_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ProjetoDA.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\NASA\Desktop\DA_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ProjetoDA.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ProjetoDA.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -82,10 +82,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/NASA/Desktop/DA_Project/projeto/include/graph/Graph.h">
+			<Option target="ProjetoDA"/>
+		</Unit>
+		<Unit filename="C:/Users/NASA/Desktop/DA_Project/projeto/include/graph/Station.h">
+			<Option target="ProjetoDA"/>
+		</Unit>
+		<Unit filename="C:/Users/NASA/Desktop/DA_Project/projeto/include/graph/Trip.h">
+			<Option target="ProjetoDA"/>
+		</Unit>
 		<Unit filename="C:/Users/NASA/Desktop/DA_Project/projeto/include/information_managment/ReadData.h">
 			<Option target="ProjetoDA"/>
 		</Unit>
 		<Unit filename="C:/Users/NASA/Desktop/DA_Project/projeto/main.cpp">
+			<Option target="ProjetoDA"/>
+		</Unit>
+		<Unit filename="C:/Users/NASA/Desktop/DA_Project/projeto/src/graph/Graph.cpp">
+			<Option target="ProjetoDA"/>
+		</Unit>
+		<Unit filename="C:/Users/NASA/Desktop/DA_Project/projeto/src/graph/Station.cpp">
+			<Option target="ProjetoDA"/>
+		</Unit>
+		<Unit filename="C:/Users/NASA/Desktop/DA_Project/projeto/src/graph/Trip.cpp">
 			<Option target="ProjetoDA"/>
 		</Unit>
 		<Unit filename="C:/Users/NASA/Desktop/DA_Project/projeto/src/information_managment/ReadData.cpp">
