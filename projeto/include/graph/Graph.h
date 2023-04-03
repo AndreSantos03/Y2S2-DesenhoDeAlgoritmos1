@@ -12,8 +12,7 @@
 #include <algorithm>
 #include <unordered_map>
 #include <cmath>
-#include "Station.h"
-#include "Trip.h"
+#include "Station_Trip.h"
 
 
 using namespace std;
