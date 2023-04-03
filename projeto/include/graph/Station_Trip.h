@@ -1,16 +1,16 @@
-//
-// Created by diogo on 16/03/2023.
-//
+#ifndef PROJETODA_STATION_TRIP_H
+#define PROJETODA_STATION_TRIP_H
 
-#ifndef PROJETODA_STATION_H
-#define PROJETODA_STATION_H
 
 #include <iostream>
 #include <list>
 #include <unordered_set>
-#include "Trip.h"
+#include <vector>
+
 
 using namespace std;
+
+class Trip;
 
 
 class Station{
@@ -54,4 +54,31 @@ private:
 
 };
 
-#endif //PROJETODA_STATION_H
+
+
+class Trip{
+public:
+
+    Trip(string destination, double capacity, string service);
+
+    const string &getDestination() const;
+
+    void setDestination(const string &destination);
+
+    double getCapacity() const;
+
+    void setCapacity(double capacity);
+
+    const string &getService() const;
+
+    void setService(const string &service);
+
+private:
+    string destination;
+    double capacity;
+    string service;
+};
+
+
+
+#endif //PROJETODA_STATION_TRIP_H

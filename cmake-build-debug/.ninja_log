@@ -1,0 +1,8 @@
+# ninja log v5
+1016	1207	7022369481675564	ProjetoDA.exe	28b85d8799ed13ac
+25	892	7022369478599757	CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj	1847572b0295c33f
+1	187	7022640900114727	build.ninja	18d34dde0177b6f4
+11	1016	7022369479847565	CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.obj	a15f06bb12e1a1ca
+4	914	7022369478840490	CMakeFiles/ProjetoDA.dir/projeto/main.cpp.obj	4eff8bb145b7b85
+18	717	7022369476860562	CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station_Trip.cpp.obj	47f6a70e819f4c41
+20	2212	7022640900114727	build.ninja	18d34dde0177b6f4
