@@ -1,12 +1,8 @@
 # ninja log v5
-20	1105	7022361243085052	CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj	1847572b0295c33f
-3	182	7022361545128781	ProjetoDA.exe	28b85d8799ed13ac
-1	187	7022362803106181	build.ninja	18d34dde0177b6f4
-5	1086	7022361242895035	CMakeFiles/ProjetoDA.dir/projeto/main.cpp.obj	4eff8bb145b7b85
-13	1181	7022361243845043	CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.obj	a15f06bb12e1a1ca
-27	892	7022361240955086	CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station_Trip.cpp.obj	47f6a70e819f4c41
-18	717	7022369476860562	CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station_Trip.cpp.obj	47f6a70e819f4c41
-25	892	7022369478599757	CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj	1847572b0295c33f
-4	914	7022369478840490	CMakeFiles/ProjetoDA.dir/projeto/main.cpp.obj	4eff8bb145b7b85
-11	1016	7022369479847565	CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.obj	a15f06bb12e1a1ca
 1016	1207	7022369481675564	ProjetoDA.exe	28b85d8799ed13ac
+25	892	7022369478599757	CMakeFiles/ProjetoDA.dir/projeto/src/graph/Graph.cpp.obj	1847572b0295c33f
+1	187	7022640900114727	build.ninja	18d34dde0177b6f4
+11	1016	7022369479847565	CMakeFiles/ProjetoDA.dir/projeto/src/information_managment/ReadData.cpp.obj	a15f06bb12e1a1ca
+4	914	7022369478840490	CMakeFiles/ProjetoDA.dir/projeto/main.cpp.obj	4eff8bb145b7b85
+18	717	7022369476860562	CMakeFiles/ProjetoDA.dir/projeto/src/graph/Station_Trip.cpp.obj	47f6a70e819f4c41
+20	2212	7022640900114727	build.ninja	18d34dde0177b6f4

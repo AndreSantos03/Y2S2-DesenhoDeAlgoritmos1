@@ -1,3 +1,0 @@
-C:/Users/diogo/CLionProjects/ProjetoDA/cmake-build-debug/CMakeFiles/ProjetoDA.dir
-C:/Users/diogo/CLionProjects/ProjetoDA/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/diogo/CLionProjects/ProjetoDA/cmake-build-debug/CMakeFiles/rebuild_cache.dir
