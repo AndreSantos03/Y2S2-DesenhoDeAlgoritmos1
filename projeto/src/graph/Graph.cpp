@@ -7,7 +7,7 @@
 void Graph::addTrip(string &src, string &dest, string &service, double capacity) {
 
     Station &srcStation = stations[src];
-    Trip trip = Trip(dest, capacity, service);
+    Trip trip = Trip(src,dest, capacity, service);
 
     srcStation.addAdj(trip);
 

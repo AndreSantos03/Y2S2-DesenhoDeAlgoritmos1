@@ -59,7 +59,7 @@ private:
 class Trip{
 public:
 
-    Trip(string destination, double capacity, string service);
+    Trip(string sourceStation, string destinationStation, double capacity, string service);
 
     const string &getDestination() const;
 
@@ -73,8 +73,17 @@ public:
 
     void setService(const string &service);
 
+    const string &getSourceStation() const;
+
+    void setSourceStation(const string &sourceStation);
+
+    const string &getDestinationStation() const;
+
+    void setDestinationStation(const string &destinationStation);
+
 private:
-    string destination;
+    string sourceStation;
+    string destinationStation;
     double capacity;
     string service;
 };

@@ -69,15 +69,15 @@ Station::Station() = default;
 
 
 
-Trip::Trip(string destination, double capacity,
-           string service) : destination(destination), capacity(capacity), service(service) {}
+Trip::Trip(string sourceStation, string destinationStation, double capacity,
+           string service) : sourceStation(sourceStation), destinationStation(destinationStation), capacity(capacity), service(service) {}
 
 const string &Trip::getDestination() const {
-    return destination;
+    return destinationStation;
 }
 
 void Trip::setDestination(const string &destination) {
-    Trip::destination = destination;
+    Trip::destinationStation = destination;
 }
 
 double Trip::getCapacity() const {
@@ -94,4 +94,20 @@ const string &Trip::getService() const {
 
 void Trip::setService(const string &service) {
     Trip::service = service;
+}
+
+const string &Trip::getSourceStation() const {
+    return sourceStation;
+}
+
+void Trip::setSourceStation(const string &sourceStation) {
+    Trip::sourceStation = sourceStation;
+}
+
+const string &Trip::getDestinationStation() const {
+    return destinationStation;
+}
+
+void Trip::setDestinationStation(const string &destinationStation) {
+    Trip::destinationStation = destinationStation;
 }
