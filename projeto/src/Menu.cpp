@@ -10,7 +10,7 @@ string toUpperCase(const string& str) {
 
     for (char c : str) {
         if (c >= 'a' && c <= 'z') {
-            result += std::to_string(c - ('a' - 'A'));
+            result += char(c - ('a' - 'A'));
         }
         else {
             result += c;
@@ -116,7 +116,7 @@ void Menu::displayStationInformation() {
 
 void Menu::displayStationInformationName(const string& name) {
     bool flag = false;
-    for (const auto& station : graph.stations) {
+    for (const auto& station : graph.getStations()) {
         if(toUpperCase(station.second.getName()) == toUpperCase(name)){
             flag = true;
             cout << "Station: " << station.second.getName() << endl;
@@ -168,7 +168,7 @@ void Menu::displayStationsWithChar(const string& in) {
         cout << endl;
         cout << "All stations from District: " << district;
         cout << endl;
-        for (const auto& station : graph.stations) {
+        for (const auto& station : graph.getStations()) {
             if(toUpperCase(district) == toUpperCase(station.second.getDistrict())){
                 flag = true;
                 cout << counter << ":" << station.second.getName() << endl;
@@ -188,7 +188,7 @@ void Menu::displayStationsWithChar(const string& in) {
         cout << endl;
         cout << "All stations from Municipality: " << municipality;
         cout << endl;
-        for (const auto& station : graph.stations) {
+        for (const auto& station : graph.getStations()) {
             if(toUpperCase(municipality) == toUpperCase(station.second.getMunicipality())){
                 flag = true;
                 cout << counter << ":" << station.second.getName() << endl;
@@ -208,7 +208,7 @@ void Menu::displayStationsWithChar(const string& in) {
         cout << endl;
         cout << "All stations from Line: " << line;
         cout << endl;
-        for (const auto& station : graph.stations) {
+        for (const auto& station : graph.getStations()) {
             if(toUpperCase(line) == toUpperCase(station.second.getLine())){
                 flag = true;
                 cout << counter << ":" << station.second.getName() << endl;

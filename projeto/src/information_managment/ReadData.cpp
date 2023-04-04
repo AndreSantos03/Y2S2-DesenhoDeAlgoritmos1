@@ -1,4 +1,5 @@
 #include "../../include/information_managment/ReadData.h"
+#include "../../include/graph/Graph.h"
 
 ReadData::ReadData() {
     readStationsCSV("../projeto/data/stations.csv");
@@ -26,7 +27,7 @@ void ReadData::readStationsCSV(const string &filename) {
         getline(ss, township, ',');
         getline(ss, line, ',');
 
-        graph.stations[name] = Station(name, district, municipality, township, line);
+        graph.addStations(name, Station(name, district, municipality, township, line));
     }
 
     file.close();

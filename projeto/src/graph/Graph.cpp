@@ -12,3 +12,11 @@ void Graph::addTrip(string &src, string &dest, string &service, double capacity)
     srcStation.addAdj(trip);
 
 }
+
+const unordered_map<string, Station> &Graph::getStations() const {
+    return stations;
+}
+
+void Graph::addStations(const string& name, const Station& station) {
+    stations[name] = station;
+}

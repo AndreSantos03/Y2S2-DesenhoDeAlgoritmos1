@@ -20,23 +20,15 @@ using namespace std;
 class Graph {
 public:
 
+    const unordered_map<string, Station> &getStations() const;
 
-
-    unordered_map<string, Station> stations;
-
-
+    void addStations(const string& name, const Station& station);
 
     void addTrip(string &src, string &dest, string &service, double capacity);
 
+private:
 
-    static double getDistance(double lat1, double lon1, double lat2, double lon2);
-
-
-    double getDistanceAirports(const string& src, const string& dest);
-
-    void bfs(const string& air);
-
-    void dijkstra(const string& air, vector<string> airlinesV);
+    unordered_map<string, Station> stations;
 
 };
 
