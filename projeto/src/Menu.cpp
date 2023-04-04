@@ -1,16 +1,16 @@
 #include "../include/Menu.h"
 
 #include <string>
-#include <stdlib.h>
+
 
 using namespace std;
 
-string toUpperCase(string str) {
-    string result = "";
+string toUpperCase(const string& str) {
+    string result;
 
-    for (char& c : str) {
+    for (char c : str) {
         if (c >= 'a' && c <= 'z') {
-            result += c - ('a' - 'A');
+            result += std::to_string(c - ('a' - 'A'));
         }
         else {
             result += c;
@@ -29,8 +29,8 @@ void Menu::display() {
     int choice;
     do {
         cout << "1. Specific Station Information\n"
-             << "2. Option 2\n"
-             << "3. Option 3\n"
+             << "2. (TO IMPLEMENT)\n"
+             << "3. (TO IMPLEMENT)\n"
              << "4. Quit\n"
              << "Enter your choice: ";
         cin >> choice;
@@ -114,31 +114,31 @@ void Menu::displayStationInformation() {
     } while (choice != 3);
 }
 
-void Menu::displayStationInformationName(string name) {
+void Menu::displayStationInformationName(const string& name) {
     bool flag = false;
     for (const auto& station : graph.stations) {
         if(toUpperCase(station.second.getName()) == toUpperCase(name)){
             flag = true;
             cout << "Station: " << station.second.getName() << endl;
-            if(!(station.second.getDistrict() == "")){
+            if(!(station.second.getDistrict().empty())){
                 cout << "District: " << station.second.getDistrict() << endl;
             }
             else{
                 cout << "District: --- NO DATA ---" << endl;
             }
-            if(!(station.second.getMunicipality() == "")){
+            if(!(station.second.getMunicipality().empty())){
                 cout << "Municipality: " << station.second.getMunicipality() << endl;
             }
             else{
                 cout << "Municipality: --- NO DATA ---" << endl;
             }
-            if(!(station.second.getTownship() == "")){
+            if(!(station.second.getTownship().empty())){
                 cout << "Township: " << station.second.getTownship() << endl;
             }
             else{
                 cout << "Township: --- NO DATA ---" << endl;
             }
-            if(!(station.second.getLine() == "")){
+            if(!(station.second.getLine().empty())){
                 cout << "Line: " << station.second.getLine() << endl;
             }
             else{
@@ -158,7 +158,7 @@ void Menu::displayStationInformationName(string name) {
     }
 }
 
-void Menu::displayStationsWithChar(string in) {
+void Menu::displayStationsWithChar(const string& in) {
     if(toUpperCase(in) == "D"){
         bool flag = false;
         string district;

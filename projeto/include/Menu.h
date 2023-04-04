@@ -17,9 +17,9 @@ private:
 
     void displayStationInformation();
 
-    void displayStationInformationName(string name);
+    void displayStationInformationName(const string& name);
 
-    void displayStationsWithChar(string basicString);
+    void displayStationsWithChar(const string& basicString);
 };
 
 #endif //PROJETODA_MENU_H

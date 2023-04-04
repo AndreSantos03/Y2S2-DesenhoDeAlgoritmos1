@@ -1,8 +1,10 @@
+#include <utility>
+
 #include "../../include/graph/Station_Trip.h"
 
 
 Station::Station(string name, string district, string municipality,
-                 string township, string line) : name(name), district(district), municipality(municipality), township(township), line(line){}
+                 string township, string line) : name(std::move(name)), district(std::move(district)), municipality(std::move(municipality)), township(std::move(township)), line(std::move(line)){}
 
 
 void Station::addAdj(const Trip& trip) {
@@ -13,48 +15,48 @@ const string &Station::getName() const {
     return name;
 }
 
-void Station::setName(const string &name) {
-    Station::name = name;
+void Station::setName(const string &name_) {
+    Station::name = name_;
 }
 
 const string &Station::getDistrict() const {
     return district;
 }
 
-void Station::setDistrict(const string &district) {
-    Station::district = district;
+void Station::setDistrict(const string &district_) {
+    Station::district = district_;
 }
 
 const string &Station::getMunicipality() const {
     return municipality;
 }
 
-void Station::setMunicipality(const string &municipality) {
-    Station::municipality = municipality;
+void Station::setMunicipality(const string &municipality_) {
+    Station::municipality = municipality_;
 }
 
 const string &Station::getTownship() const {
     return township;
 }
 
-void Station::setTownship(const string &township) {
-    Station::township = township;
+void Station::setTownship(const string &township_) {
+    Station::township = township_;
 }
 
 const string &Station::getLine() const {
     return line;
 }
 
-void Station::setLine(const string &line) {
-    Station::line = line;
+void Station::setLine(const string &line_) {
+    Station::line = line_;
 }
 
 const vector<Trip> &Station::getAdj() const {
     return adj;
 }
 
-void Station::setAdj(const vector<Trip> &adj) {
-    Station::adj = adj;
+void Station::setAdj(const vector<Trip> &adjency) {
+    Station::adj = adjency;
 }
 
 Station::Station() = default;
@@ -70,7 +72,7 @@ Station::Station() = default;
 
 
 Trip::Trip(string sourceStation, string destinationStation, double capacity,
-           string service) : sourceStation(sourceStation), destinationStation(destinationStation), capacity(capacity), service(service) {}
+           string service) : sourceStation(std::move(sourceStation)), destinationStation(std::move(destinationStation)), capacity(capacity), service(std::move(service)) {}
 
 const string &Trip::getDestination() const {
     return destinationStation;
@@ -84,30 +86,30 @@ double Trip::getCapacity() const {
     return capacity;
 }
 
-void Trip::setCapacity(double capacity) {
-    Trip::capacity = capacity;
+void Trip::setCapacity(double capaci) {
+    Trip::capacity = capaci;
 }
 
 const string &Trip::getService() const {
     return service;
 }
 
-void Trip::setService(const string &service) {
-    Trip::service = service;
+void Trip::setService(const string &servic) {
+    Trip::service = servic;
 }
 
 const string &Trip::getSourceStation() const {
     return sourceStation;
 }
 
-void Trip::setSourceStation(const string &sourceStation) {
-    Trip::sourceStation = sourceStation;
+void Trip::setSourceStation(const string &src) {
+    Trip::sourceStation = src;
 }
 
 const string &Trip::getDestinationStation() const {
     return destinationStation;
 }
 
-void Trip::setDestinationStation(const string &destinationStation) {
-    Trip::destinationStation = destinationStation;
+void Trip::setDestinationStation(const string &dest) {
+    Trip::destinationStation = dest;
 }
