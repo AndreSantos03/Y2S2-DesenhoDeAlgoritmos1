@@ -20,15 +20,25 @@ using namespace std;
 class Graph {
 public:
 
-    const unordered_map<string, Station> &getStations() const;
+    void addStations(Station *station);
 
-    void addStations(const string& name, const Station& station);
+    const unordered_map<string, Station *> getStations() const;
 
-    void addEdge(Station *src, Station *dest, string &service, double capacity);
+    Station *getStation(const string &basicString);
+
+    void addEdge(Station *src, Station *dest,const string &service, double capacity);
+
+    const unordered_map<string, vector<Station *>> &getLines() const;
+
+    void addLines(const string &lineName, Station *station);
+
+    Station *findStation(const string& src);
+
 
 private:
 
-    unordered_map<string, Station> stations;
+    unordered_map<string, Station*> stations;
+    unordered_map<string, vector<Station*>> lines;
 
 };
 

@@ -26,8 +26,8 @@ void ReadData::readStationsCSV(const string &filename) {
         getline(ss, municipality, ',');
         getline(ss, township, ',');
         getline(ss, line, ',');
-
-        graph.addStations(name, Station(name, district, municipality, township, line));
+        auto *station = new Station(name, district, municipality, township, line);
+        graph.addStations(station);
     }
 
     file.close();
@@ -48,14 +48,17 @@ void ReadData::readNetworkCSV(const string &filename) {
         while (getline(file, line)) {
             stringstream lineStream(line);
 
-            string src, dst, capacity, service;
+            string src, dest, capacity, service;
 
             getline(lineStream, src, ',');
-            getline(lineStream, dst, ',');
+            getline(lineStream, dest, ',');
             getline(lineStream, capacity, ',');
             getline(lineStream, service, ',');
 
-            graph.addEdge(src, dst, service, stod(capacity));
+            Station *srcStation = graph.getStation(src);
+            Station *destStation = graph.getStation(dest);
+            graph.addEdge(srcStation, destStation, service, stod(capacity));
+            graph.addLines(srcStation->getLine(), srcStation);
         }
 
         file.close();

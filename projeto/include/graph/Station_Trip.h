@@ -18,38 +18,39 @@ public:
 
     Station();
 
-    void addAdj(const Trip& trip);
+    void addEdge(Station *dest, double capacity, const string &service);
 
     const string &getName() const;
 
-    void setName(const string &name_);
-
     const string &getDistrict() const;
-
-    void setDistrict(const string &district_);
 
     const string &getMunicipality() const;
 
-    void setMunicipality(const string &municipality_);
-
     const string &getTownship() const;
-
-    void setTownship(const string &township_);
 
     const string &getLine() const;
 
-    void setLine(const string &line_);
+    const vector<Trip *> &getEdge() const;
 
-    const vector<Trip> &getAdj() const;
+    vector<Trip *> &getIncoming();
 
-    void setAdj(const vector<Trip> &adjency);
+    bool isVisited() const;
+
+    void setVisited(bool visited);
+
+    Trip *getPath() const;
+
+    void setPath(Trip *path);
 
     Station(string name, string district, string municipality, string township, string line);
 
 private:
     string name, district, municipality, township, line;
 
-    vector<Trip> adj;
+    vector<Trip*> edges;
+    bool visited = false;
+    Trip *path = nullptr;
+    vector<Trip *> incoming;
 
 
 };
@@ -61,10 +62,6 @@ public:
 
     Trip(Station *sourceStation, Station *destinationStation, double capacity, string service);
 
-    Station *getDestination() const;
-
-    void setDestination(const string &destination);
-
     double getCapacity() const;
 
     void setCapacity(double capaci);
@@ -73,19 +70,20 @@ public:
 
     void setService(const string &servic);
 
-    const string &getSourceStation() const;
+    Station *getSourceStation() const;
 
-    void setSourceStation(const string &src);
+    void setSourceStation(Station *sourceStation);
 
-    const string &getDestinationStation() const;
+    Station *getDestinationStation() const;
 
-    void setDestinationStation(const string &dest);
+    void setDestinationStation(Station *destinationStation);
 
 private:
     Station *sourceStation;
     Station *destinationStation;
     double capacity;
     string service;
+
 };
 
 

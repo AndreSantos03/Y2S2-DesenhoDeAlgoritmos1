@@ -117,38 +117,38 @@ void Menu::displayStationInformation() {
 void Menu::displayStationInformationName(const string& name) {
     bool flag = false;
     for (const auto& station : graph.getStations()) {
-        if(toUpperCase(station.second.getName()) == toUpperCase(name)){
+        if(toUpperCase(station.second->getName()) == toUpperCase(name)){
             flag = true;
-            cout << "Station: " << station.second.getName() << endl;
-            if(!(station.second.getDistrict().empty())){
-                cout << "District: " << station.second.getDistrict() << endl;
+            cout << "Station: " << station.second->getName() << endl;
+            if(!(station.second->getDistrict().empty())){
+                cout << "District: " << station.second->getDistrict() << endl;
             }
             else{
                 cout << "District: --- NO DATA ---" << endl;
             }
-            if(!(station.second.getMunicipality().empty())){
-                cout << "Municipality: " << station.second.getMunicipality() << endl;
+            if(!(station.second->getMunicipality().empty())){
+                cout << "Municipality: " << station.second->getMunicipality() << endl;
             }
             else{
                 cout << "Municipality: --- NO DATA ---" << endl;
             }
-            if(!(station.second.getTownship().empty())){
-                cout << "Township: " << station.second.getTownship() << endl;
+            if(!(station.second->getTownship().empty())){
+                cout << "Township: " << station.second->getTownship() << endl;
             }
             else{
                 cout << "Township: --- NO DATA ---" << endl;
             }
-            if(!(station.second.getLine().empty())){
-                cout << "Line: " << station.second.getLine() << endl;
+            if(!(station.second->getLine().empty())){
+                cout << "Line: " << station.second->getLine() << endl;
             }
             else{
                 cout << "Line: --- NO DATA ---" << endl;
             }
 
-            for (const auto& edge : station.second.getAdj()) {
-                cout << "   -> Connects to: " << edge.getDestination() << endl;
-                cout << "      Capacity: " << edge.getCapacity() << endl;
-                cout << "      Service: " << edge.getService() << endl;
+            for (const auto& edge : station.second->getEdge()) {
+                cout << "   -> Connects to: " << edge->getDestinationStation()->getName() << endl;
+                cout << "      Capacity: " << edge->getCapacity() << endl;
+                cout << "      Service: " << edge->getService() << endl;
             }
             cout << endl;
         }
@@ -169,9 +169,9 @@ void Menu::displayStationsWithChar(const string& in) {
         cout << "All stations from District: " << district;
         cout << endl;
         for (const auto& station : graph.getStations()) {
-            if(toUpperCase(district) == toUpperCase(station.second.getDistrict())){
+            if(toUpperCase(district) == toUpperCase(station.second->getDistrict())){
                 flag = true;
-                cout << counter << ":" << station.second.getName() << endl;
+                cout << counter << ":" << station.second->getName() << endl;
                 counter++;
             }
         }
@@ -189,9 +189,9 @@ void Menu::displayStationsWithChar(const string& in) {
         cout << "All stations from Municipality: " << municipality;
         cout << endl;
         for (const auto& station : graph.getStations()) {
-            if(toUpperCase(municipality) == toUpperCase(station.second.getMunicipality())){
+            if(toUpperCase(municipality) == toUpperCase(station.second->getMunicipality())){
                 flag = true;
-                cout << counter << ":" << station.second.getName() << endl;
+                cout << counter << ":" << station.second->getName() << endl;
                 counter++;
             }
         }
@@ -209,9 +209,9 @@ void Menu::displayStationsWithChar(const string& in) {
         cout << "All stations from Line: " << line;
         cout << endl;
         for (const auto& station : graph.getStations()) {
-            if(toUpperCase(line) == toUpperCase(station.second.getLine())){
+            if(toUpperCase(line) == toUpperCase(station.second->getLine())){
                 flag = true;
-                cout << counter << ":" << station.second.getName() << endl;
+                cout << counter << ":" << station.second->getName() << endl;
                 counter++;
             }
         }
