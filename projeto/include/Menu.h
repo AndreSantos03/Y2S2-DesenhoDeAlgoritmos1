@@ -20,6 +20,8 @@ private:
     void displayStationInformationName(const string& name);
 
     void displayStationsWithChar(const string& basicString);
+
+    void displayMaxFlow();
 };
 
 #endif //PROJETODA_MENU_H

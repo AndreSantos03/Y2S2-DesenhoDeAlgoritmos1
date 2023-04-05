@@ -34,6 +34,9 @@ public:
 
     Station *findStation(const string& src);
 
+    bool bfsEdmondsKarp(const string &src, const string &dest);
+
+    int maxFlow( const string &src, const string &dest);
 
 private:
 

@@ -29,7 +29,7 @@ void Menu::display() {
     int choice;
     do {
         cout << "1. Specific Station Information\n"
-             << "2. (TO IMPLEMENT)\n"
+             << "2. Maximum number of trains that can simultaneously travel between two stations\n"
              << "3. (TO IMPLEMENT)\n"
              << "4. Quit\n"
              << "Enter your choice: ";
@@ -50,6 +50,7 @@ void Menu::display() {
                 displayStationInformation();
                 break;
             case 2:
+                displayMaxFlow();
                 break;
             case 3:
                 break;
@@ -221,6 +222,38 @@ void Menu::displayStationsWithChar(const string& in) {
     }
     else{
         cout << "Invalid choice, please try again." << endl << endl;
+    }
+}
+
+void Menu::displayMaxFlow() {
+    string srcString, destString;
+    Station * src;
+    Station * dest;
+    cout << "Insert Source Station Name: ";
+    cin >> srcString;
+    src = graph.findStation(srcString);
+    while(src== nullptr){
+        cout << srcString << " is not a train station." <<endl;
+        cout << "Insert Source Station Name: ";
+        cin >> srcString;
+        src = graph.findStation(srcString);
+    }
+    cout << "Insert Destination Station Name: ";
+    cin >> destString;
+    dest = graph.findStation(destString);
+    while(dest== nullptr){
+        cout << destString << " is not a train station." <<endl;
+        cout << "Insert Destination Station Name: ";
+        cin >> destString;
+        dest = graph.findStation(destString);
+    }
+
+    int totalFlow = graph.maxFlow(srcString,destString);
+    if(totalFlow == 0){
+        cout << "There's no path  between " << srcString << " and " << destString << endl;
+    }
+    else{
+        cout << "There are  " << totalFlow << " trains that can travel simultaneously between " << srcString << " and " << destString << endl << endl;
     }
 }
 
