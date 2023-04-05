@@ -3,11 +3,12 @@
 //
 
 #include "../../include/graph/Graph.h"
+#include "../../include/graph/Station_Trip.h"
 
-void Graph::addTrip(string &src, string &dest, string &service, double capacity) {
+void Graph::addEdge(Station *src, Station *dest, string &service, double capacity) {
 
-    Station &srcStation = stations[src];
-    Trip trip = Trip(src,dest, capacity, service);
+    src->addEdge(dest, capacity, service);
+    dest->addEdge(src, capacity, service);
 
     srcStation.addAdj(trip);
 

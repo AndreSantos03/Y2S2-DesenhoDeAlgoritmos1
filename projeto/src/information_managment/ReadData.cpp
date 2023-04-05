@@ -55,7 +55,7 @@ void ReadData::readNetworkCSV(const string &filename) {
             getline(lineStream, capacity, ',');
             getline(lineStream, service, ',');
 
-            graph.addTrip(src, dst, service, stod(capacity));
+            graph.addEdge(src, dst, service, stod(capacity));
         }
 
         file.close();

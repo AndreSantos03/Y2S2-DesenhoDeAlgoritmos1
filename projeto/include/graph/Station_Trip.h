@@ -59,9 +59,9 @@ private:
 class Trip{
 public:
 
-    Trip(string sourceStation, string destinationStation, double capacity, string service);
+    Trip(Station *sourceStation, Station *destinationStation, double capacity, string service);
 
-    const string &getDestination() const;
+    Station *getDestination() const;
 
     void setDestination(const string &destination);
 
@@ -82,8 +82,8 @@ public:
     void setDestinationStation(const string &dest);
 
 private:
-    string sourceStation;
-    string destinationStation;
+    Station *sourceStation;
+    Station *destinationStation;
     double capacity;
     string service;
 };

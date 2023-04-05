@@ -71,10 +71,15 @@ Station::Station() = default;
 
 
 
-Trip::Trip(string sourceStation, string destinationStation, double capacity,
-           string service) : sourceStation(std::move(sourceStation)), destinationStation(std::move(destinationStation)), capacity(capacity), service(std::move(service)) {}
+Trip::Trip(Station *sourceStation, Station *destinationStation, double capacity,
+           string service) {
+    this->sourceStation = sourceStation;
+    this->destinationStation = destinationStation;
+    this->capacity = capacity;
+    this->service = service;
+}
 
-const string &Trip::getDestination() const {
+Station *Trip::getDestination() const {
     return destinationStation;
 }
 

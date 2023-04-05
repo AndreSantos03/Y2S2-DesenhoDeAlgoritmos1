@@ -24,7 +24,7 @@ public:
 
     void addStations(const string& name, const Station& station);
 
-    void addTrip(string &src, string &dest, string &service, double capacity);
+    void addEdge(Station *src, Station *dest, string &service, double capacity);
 
 private:
 
