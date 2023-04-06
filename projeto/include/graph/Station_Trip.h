@@ -78,12 +78,21 @@ public:
 
     void setDestinationStation(Station *destinationStation);
 
+    Trip *getReverse() const;
+
+    void setReverse(Trip *reverse);
+
+    int getFlow() const;
+
+    void setFlow(int flow);
+
 private:
     Station *sourceStation;
     Station *destinationStation;
     double capacity;
+    int flow = 0;
     string service;
-
+    Trip *reverse = nullptr;
 };
 
 

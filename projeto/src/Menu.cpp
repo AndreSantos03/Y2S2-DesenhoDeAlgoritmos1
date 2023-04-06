@@ -1,24 +1,11 @@
 #include "../include/Menu.h"
+#include "../include/graph/Graph.h"
+#include "../include/Utils.h"
 
 #include <string>
 
 
 using namespace std;
-
-string toUpperCase(const string& str) {
-    string result;
-
-    for (char c : str) {
-        if (c >= 'a' && c <= 'z') {
-            result += char(c - ('a' - 'A'));
-        }
-        else {
-            result += c;
-        }
-    }
-
-    return result;
-}
 
 Menu::Menu() {
     data = ReadData();
@@ -29,8 +16,8 @@ void Menu::display() {
     int choice;
     do {
         cout << "1. Specific Station Information\n"
-             << "2. (TO IMPLEMENT)\n"
-             << "3. (TO IMPLEMENT)\n"
+             << "2. Maximum number of trains that can simultaneously travel between two stations\n"
+             << "3. Shortest path between two stations\n"
              << "4. Quit\n"
              << "Enter your choice: ";
         cin >> choice;
@@ -50,8 +37,10 @@ void Menu::display() {
                 displayStationInformation();
                 break;
             case 2:
+                displayMaxFlow();
                 break;
             case 3:
+                displayShortestPath();
                 break;
             case 4:
                 cout << "Quitting...\n" << endl;
@@ -146,7 +135,7 @@ void Menu::displayStationInformationName(const string& name) {
             }
 
             for (const auto& edge : station.second->getEdge()) {
-                cout << "   -> Connects to: " << edge->getDestinationStation()->getName() << endl;
+                cout << "  ==> Connects to: " << edge->getDestinationStation()->getName() << endl;
                 cout << "      Capacity: " << edge->getCapacity() << endl;
                 cout << "      Service: " << edge->getService() << endl;
             }
@@ -222,6 +211,73 @@ void Menu::displayStationsWithChar(const string& in) {
     else{
         cout << "Invalid choice, please try again." << endl << endl;
     }
+}
+
+void Menu::displayMaxFlow() {
+    string srcString, destString;
+    Station * src;
+    Station * dest;
+    cout << "Insert Source Station Name:";
+    getline(cin >> ws, srcString);
+    src = graph.findStation(srcString);
+    if(src== nullptr){
+        cout << srcString << " is not a train station." <<endl;
+        cout << "Returning..."<<endl<<endl;
+        return;
+    }
+    cout << "Insert Destination Station Name:";
+    getline(cin >> ws, destString);
+    dest = graph.findStation(destString);
+    if(dest== nullptr){
+        cout << destString << " is not a train station." <<endl;
+        cout << "Returning..."<<endl<<endl;
+        return;
+    }
+
+    int totalFlow = graph.maxFlow(src,dest);
+    if(totalFlow == 0){
+        cout << "There's no path between " << src->getName() << " and " << dest->getName() << endl<< endl;
+    }
+    else{
+        cout << totalFlow << "trains have the capacity to travel concurrently between " << src->getName() << " and " << dest->getName() << "." << endl << endl;
+    }
+}
+
+void Menu::displayShortestPath(){
+    string srcString, destString;
+    Station * src;
+    Station * dest;
+    cout << "Insert Source Station Name:";
+    getline(cin >> ws, srcString);
+    src = graph.findStation(srcString);
+    if(src== nullptr){
+        cout << srcString << " is not a train station." <<endl;
+        cout << "Returning..."<<endl<<endl;
+        return;
+    }
+    cout << "Insert Destination Station Name:";
+    getline(cin >> ws, destString);
+    dest = graph.findStation(destString);
+    if(dest== nullptr){
+        cout << destString << " is not a train station." <<endl;
+        cout << "Returning..."<<endl<<endl;
+        return;
+    }
+    vector<string> path = graph.dijkstra(src,dest);
+    if(path[0] != src->getName()){
+        cout <<endl<< "Theres no path between " << src->getName() << " and " << dest->getName() << "." << endl<<endl;
+    }
+    else{
+        cout <<endl<< "Shortest path between " << src->getName() << " and " << dest->getName() << ":" << endl<<endl;
+        for (int i = 0; i < path.size(); i++) {
+            cout << path[i];
+            if (i != path.size() - 1) {
+                cout << " ==> ";
+            }
+        }
+        cout<< endl<< endl << "Total distance: " << path.size() << endl<<endl;
+    }
+
 }
 
 
