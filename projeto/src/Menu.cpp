@@ -18,7 +18,8 @@ void Menu::display() {
         cout << "1. Specific Station Information\n"
              << "2. Maximum number of trains that can simultaneously travel between two stations\n"
              << "3. Shortest path between two stations\n"
-             << "4. Quit\n"
+             << "4. Display the pair of stations that needs trains\n"
+             << "5. Quit\n"
              << "Enter your choice: ";
         cin >> choice;
         cout << endl;
@@ -43,13 +44,17 @@ void Menu::display() {
                 displayShortestPath();
                 break;
             case 4:
+                displayWhichPairNeedMoreCapacity();
+                break;
+            case 5:
                 cout << "Quitting...\n" << endl;
                 break;
+
             default:
                 cout << "Invalid choice, please try again.\n";
                 break;
         }
-    } while (choice != 4);
+    } while (choice != 5);
 }
 
 void Menu::displayStationInformation() {
@@ -281,13 +286,34 @@ void Menu::displayShortestPath(){
 }
 
 void Menu::displayWhichPairNeedMoreCapacity(){
-    // "3. Display the pair of stations that needs trains"
+    int maximumFlow = 0;
+    unordered_map<string,string> pairStations;
     for(auto stationX : graph.getStations()){
         for(auto stationY : graph.getStations()){
             if(!(stationX.second == stationY.second)){
                 int flow = graph.maxFlow(stationX.second, stationY.second);
+                if(maximumFlow < flow){
+                    maximumFlow = flow;
+                }
             }
         }
+    }
+
+    for(auto stationI : graph.getStations()){
+        for(auto stationJ : graph.getStations()){
+            if(!(stationI.second == stationJ.second)){
+                int iflow = graph.maxFlow(stationI.second, stationJ.second);
+                if (iflow == maximumFlow){
+                    pairStations.insert({{stationI.second->getName(),stationJ.second->getName()}});
+                }
+            }
+        }
+    }
+
+    cout << endl << "Max: " << maximumFlow;
+
+    for(auto par : pairStations){
+        cout << endl << par.first << " - " << par.second << endl;
     }
 }
 
