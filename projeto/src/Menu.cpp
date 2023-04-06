@@ -239,7 +239,7 @@ void Menu::displayMaxFlow() {
         cout << "There's no path between " << src->getName() << " and " << dest->getName() << endl<< endl;
     }
     else{
-        cout << totalFlow << "trains have the capacity to travel concurrently between " << src->getName() << " and " << dest->getName() << "." << endl << endl;
+        cout << totalFlow << " trains have the capacity to travel concurrently between " << src->getName() << " and " << dest->getName() << "." << endl << endl;
     }
 }
 
