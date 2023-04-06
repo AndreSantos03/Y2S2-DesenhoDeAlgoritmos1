@@ -5,6 +5,7 @@
 #include "../../include/graph/Graph.h"
 #include "../../include/graph/Station_Trip.h"
 
+
 void Graph::addEdge(Station *src, Station *dest,const string &service, double capacity) {
 
     src->addEdge(dest, capacity, service);
@@ -36,144 +37,158 @@ const unordered_map<string, vector<Station *>> &Graph::getLines() const {
 }
 
 Station *Graph::findStation(const string& src) {
-    for (const auto &station: stations) {
-        if (station.first == src) {
+    for (const auto& station: stations) {
+        if (toUpperCase(station.first) == toUpperCase(src)) {
             return station.second;
         }
     }
     return nullptr;
 }
 
-/*
-bool Graph::bfsEdmondsKarp(const string &src, const string &dest) {
-    for(auto s: stations){
-        s.second->setPath(nullptr);
-        s.second->setVisited(false);
+vector<string> Graph::dijkstra(Station* src, Station* dest) {
+    unordered_map<string, Station*> visited;
+    unordered_map<string, Station*> unvisited;
+    unordered_map<string, Station*> previous;
+    unordered_map<string, int> distances;
 
-        for(auto e: s.second->getEdge()){
-            delete e->getReverse();
-            e->setReverse(nullptr);
-        }
+    for (auto station : stations) {
+        unvisited[station.second->getName()] = station.second;
+        distances[station.second->getName()] = INT_MAX;
     }
+    distances[src->getName()] = 0;
 
-    queue<Station *> q;
-    Station * srcStat = findStation(src);
-    q.push(srcStat);
-    srcStat->setVisited(true);
-
-    while(!q.empty()){
-        Station* u = q.front();
-        q.pop();
-
-        for(auto e: u->getEdge()){
-            Station *w = e->getDestinationStation();
-
-            if(e->getCapacity() - e->getFlow() > 0 && !w->isVisited()){
-                w->setVisited(true);
-                w->setPath(e);
-                q.push(w);
-                if(w->getName() == dest) return true;
-            }
+    while (!unvisited.empty()) {
+        Station* curr = unvisited.begin()->second;
+        for(auto &station: unvisited){
+            if(distances[station.first] < distances[curr->getName()])
+                curr = station.second;
         }
 
-        for(auto e: u->getIncoming()){
-            Station *w = e->getDestinationStation();
+        if(curr->getName() == dest->getName()) break;
 
-            if(e->getFlow() != 0 && !w->isVisited()){
-                Trip * rev = new Trip(e->getDestinationStation(), e->getSourceStation(),e->getFlow(),e->getService());
+        unvisited.erase(curr->getName());
+        visited[curr->getName()] = curr;
 
-                rev->setFlow(0);
-                rev->setReverse(e);
-                e->setReverse(rev);
-                w->setVisited(rev);
-                w->setPath(rev);
-                q.push(w);
+        for(auto &connection: curr->getEdge()){
+            if(visited.find(connection->getDestinationStation()->getName()) == visited.end()){
+                int i = distances[curr->getName()] + 1;
+                if(i < distances[connection->getDestinationStation()->getName()]){
+                    distances[connection->getDestinationStation()->getName()] = i;
+                    previous[connection->getDestinationStation()->getName()] = curr;
+                }
             }
         }
     }
+
+    if (distances[dest->getName()] == INT_MAX) {
+        return vector<string>();
+    }
+
+    vector<string> path;
+    Station *current = dest;
+    while (current != nullptr) {
+        path.push_back(current->getName());
+        current = previous[current->getName()];
+    }
+    reverse(path.begin(), path.end());
+    return path;
 }
-*/
 
-bool Graph::bfsEdmondsKarp(const string &src, const string &dest) {
-    // Reset the graph
-    for (auto s : stations) {
-        s.second->setPath(nullptr);
-        s.second->setVisited(false);
-
-        for (auto e : s.second->getEdge()) {
-            delete e->getReverse();
-            e->setReverse(nullptr);
+bool Graph::bfsEdmondsKarp(Station* src, Station* dest) {
+    for (auto& [name, station] : stations) {
+        station->setVisited(false);
+        station->setPath(nullptr);
+        for (auto edge : station->getEdge()) {
+            delete edge->getReverse();
+            edge->setReverse(nullptr);
         }
     }
 
-    // Perform the BFS traversal
-    queue<Station*> q;
-    Station* srcStat = findStation(src);
-    q.push(srcStat);
-    srcStat->setVisited(true);
+    std::queue<Station*> q;
+    q.push(src);
+    src->setVisited(true);
 
     while (!q.empty()) {
-        Station* u = q.front();
+        Station* currStation = q.front();
         q.pop();
 
-        for (auto e : u->getEdge()) {
-            Station* w = e->getDestinationStation();
+        for (auto edge : currStation->getEdge()) {
+            Station* neighborStation = edge->getDestinationStation();
 
-            if (e->getCapacity() - e->getFlow() > 0 && !w->isVisited()) {
-                w->setVisited(true);
-                w->setPath(e);
-                q.push(w);
+            if (!neighborStation->isVisited() && edge->getCapacity() - edge->getFlow() > 0) {
+                neighborStation->setPath(edge);
+                neighborStation->setVisited(true);
+                q.push(neighborStation);
+
+                if (neighborStation == dest) {
+                    return true;
+                }
             }
         }
 
-        for (auto e : u->getIncoming()) {
-            Station* w = e->getSourceStation();
+        for (auto edge : currStation->getIncoming()) {
+            Station* neighborStation = edge->getSourceStation();
 
-            if (e->getFlow() != 0 && !w->isVisited()) {
-                Trip* rev = new Trip(w, u, e->getFlow(), e->getService());
+            if (!neighborStation->isVisited() && edge->getFlow() != 0) {
+                Trip* reverseEdge = new Trip(edge->getDestinationStation(), edge->getSourceStation(), edge->getFlow(), edge->getService());
+                reverseEdge->setFlow(0);
+                edge->setReverse(reverseEdge);
+                reverseEdge->setReverse(edge);
 
-                rev->setFlow(0);
-                rev->setReverse(e);
-                e->setReverse(rev);
-                w->setVisited(true);
-                w->setPath(rev);
-                q.push(w);
+                neighborStation->setPath(reverseEdge);
+                neighborStation->setVisited(true);
+                q.push(neighborStation);
             }
         }
     }
-
-    // Check if there is a path from the source station to the destination station
-    Station* destStat = findStation(dest);
-    return destStat->isVisited();
+    return false;
 }
 
-int Graph::maxFlow( const string &src, const string &dest) {
 
-    while(bfsEdmondsKarp(src, dest)) {
-        Station *curr = getStation(dest);
-        double bottleneck = INT_MAX ;
+int Graph::maxFlow(Station* src, Station* dest) {
+    for(auto& station : stations){
+        for(auto trip : station.second->getEdge())
+            trip->setFlow(0);
+    }
 
-        while(curr->getPath() != nullptr) {
-            Trip *edge = curr->getPath();
-            bottleneck = min(bottleneck, edge->getCapacity() - edge->getFlow());
-            curr = edge->getSourceStation();
-        }
+    int maxFlow = 0;
+    bool foundPath = true;
 
-        curr = getStation(dest);
-        while(curr->getPath() != nullptr) {
-            Trip *edge = curr->getPath();
-            edge->setFlow(edge->getFlow() + bottleneck);
-            edge->getReverse()->setFlow(edge->getReverse()->getFlow() - bottleneck);
-            curr = edge->getSourceStation();
+    while(foundPath){
+        foundPath = bfsEdmondsKarp(src, dest);
+
+        if(foundPath){
+            int mrc = INT32_MAX;
+            Station* currStation = dest;
+
+            while(currStation != src){
+                Trip* path = currStation->getPath();
+
+                if(path->getReverse() == nullptr)
+                    mrc = std::min(mrc, static_cast<int> (path->getCapacity() - path->getFlow()));
+                else
+                    mrc = std::min(mrc, static_cast<int> (path->getReverse()->getFlow()));
+
+                currStation = path->getSourceStation();
+            }
+
+            currStation = dest;
+
+            while(currStation != src){
+                Trip* path = currStation->getPath();
+
+                if(path->getReverse() == nullptr)
+                    path->setFlow(path->getFlow() + mrc);
+                else
+                    path->getReverse()->setFlow(path->getReverse()->getFlow() - mrc);
+
+                currStation = path->getSourceStation();
+            }
+
+            maxFlow += mrc;
         }
     }
 
-    int maxTrains = 0;
-    Station *srcStation = getStation(src);
-    for(auto e: srcStation->getEdge()) {
-        if(e->getFlow() > 0) {
-            maxTrains += e->getFlow();
-        }
-    }
-    return maxTrains;
+    return maxFlow;
 }
+

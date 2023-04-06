@@ -55,15 +55,6 @@ void Station::setPath(Trip *path) {
     Station::path = path;
 }
 
-int Trip::getFlow() const {
-    return flow;
-}
-
-void Trip::setFlow(int flow) {
-    Trip::flow = flow;
-}
-
-
 Station::Station() = default;
 
 
@@ -117,4 +108,12 @@ Trip *Trip::getReverse() const {
 
 void Trip::setReverse(Trip *reverse) {
     Trip::reverse = reverse;
+}
+
+int Trip::getFlow() const {
+    return flow;
+}
+
+void Trip::setFlow(int flow) {
+    Trip::flow = flow;
 }

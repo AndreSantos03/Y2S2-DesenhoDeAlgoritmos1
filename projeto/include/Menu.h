@@ -2,6 +2,7 @@
 #define PROJETODA_MENU_H
 
 #include "graph/Graph.h"
+#include "../include/Utils.h"
 #include "information_managment/ReadData.h"
 
 class Menu {
@@ -22,6 +23,8 @@ private:
     void displayStationsWithChar(const string& basicString);
 
     void displayMaxFlow();
+
+    void displayShortestPath();
 };
 
 #endif //PROJETODA_MENU_H

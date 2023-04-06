@@ -13,6 +13,7 @@
 #include <unordered_map>
 #include <cmath>
 #include "Station_Trip.h"
+#include "../Utils.h"
 
 
 using namespace std;
@@ -34,9 +35,11 @@ public:
 
     Station *findStation(const string& src);
 
-    bool bfsEdmondsKarp(const string &src, const string &dest);
+    vector<string> dijkstra(Station *src, Station *dest);
 
-    int maxFlow( const string &src, const string &dest);
+    int maxFlow(Station* src, Station* dest);
+
+    bool bfsEdmondsKarp(Station* src, Station* dest);
 
 private:
 
