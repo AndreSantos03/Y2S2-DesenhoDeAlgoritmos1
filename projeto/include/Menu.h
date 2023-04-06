@@ -27,6 +27,8 @@ private:
     void displayShortestPath();
 
     void displayWhichPairNeedMoreCapacity();
+
+    void displayLargerBudgets();
 };
 
 #endif //PROJETODA_MENU_H

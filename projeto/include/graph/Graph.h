@@ -41,8 +41,11 @@ public:
 
     bool bfsEdmondsKarp(Station* src, Station* dest);
 
-private:
+    vector<pair<string, int>> top_k_max_flow_district(int k);
 
+    vector<pair<string, int>> top_k_max_flow_municipality(int k);
+
+private:
     unordered_map<string, Station*> stations;
     unordered_map<string, vector<Station*>> lines;
 

@@ -18,7 +18,8 @@ void Menu::display() {
         cout << "1. Specific Station Information\n"
              << "2. Maximum number of trains that can simultaneously travel between two stations\n"
              << "3. Shortest path between two stations\n"
-             << "4. Quit\n"
+             << "4. Top-k municipalities/districts with highest budget needs\n"
+             << "5. Quit\n"
              << "Enter your choice: ";
         cin >> choice;
         cout << endl;
@@ -43,6 +44,9 @@ void Menu::display() {
                 displayShortestPath();
                 break;
             case 4:
+                displayLargerBudgets();
+                break;
+            case 5:
                 cout << "Quitting...\n" << endl;
                 break;
             default:
@@ -288,6 +292,27 @@ void Menu::displayWhichPairNeedMoreCapacity(){
                 int flow = graph.maxFlow(stationX.second, stationY.second);
             }
         }
+    }
+}
+
+void Menu::displayLargerBudgets() {
+    char ans;
+    cout << "District or Municipality? (d/m):\n";
+    cin >> ans;
+    while(ans != 'm' && ans != 'd'){
+        cout << ans << endl;
+        cout << "Invalid answer!\nDistrict or Municipality? (d/m):\n";
+        cin >> ans;
+    }
+    int ammount;
+    cout << "Ammount to be displayed:\n";
+    cin >> ammount;
+    vector<pair<string,int>> listK;
+    if(ans == 'd')
+        listK = graph.top_k_max_flow_district(ammount);
+    else listK = graph.top_k_max_flow_municipality(ammount);
+    for(auto p : listK){
+        cout << p.first << " requires " <<  p.second << " trains.\n";
     }
 }
 
