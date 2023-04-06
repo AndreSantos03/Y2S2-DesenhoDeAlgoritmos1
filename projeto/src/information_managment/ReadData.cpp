@@ -14,18 +14,18 @@ void ReadData::readStationsCSV(const string &filename) {
         return;
     }
 
-    string line;
-    getline(file, line); // skip the first line (column headers)
+    string fileLine;
+    getline(file, fileLine); // skip the first line (column headers)
 
-    while (getline(file, line)) {
-        stringstream ss(line);
+    while (getline(file, fileLine)) {
+        stringstream ss(fileLine);
 
         string name, district, municipality, township, line;
         getline(ss, name, ',');
         getline(ss, district, ',');
         getline(ss, municipality, ',');
         getline(ss, township, ',');
-        getline(ss, line, ',');
+        getline(ss, line, '\n');
         auto *station = new Station(name, district, municipality, township, line);
         graph.addStations(station);
     }

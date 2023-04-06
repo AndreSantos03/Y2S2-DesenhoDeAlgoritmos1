@@ -280,6 +280,15 @@ void Menu::displayShortestPath(){
 
 }
 
-
+void Menu::displayWhichPairNeedMoreCapacity(){
+    // "3. Display the pair of stations that needs trains"
+    for(auto stationX : graph.getStations()){
+        for(auto stationY : graph.getStations()){
+            if(!(stationX.second == stationY.second)){
+                int flow = graph.maxFlow(stationX.second, stationY.second);
+            }
+        }
+    }
+}
 
 

@@ -25,6 +25,8 @@ private:
     void displayMaxFlow();
 
     void displayShortestPath();
+
+    void displayWhichPairNeedMoreCapacity();
 };
 
 #endif //PROJETODA_MENU_H
