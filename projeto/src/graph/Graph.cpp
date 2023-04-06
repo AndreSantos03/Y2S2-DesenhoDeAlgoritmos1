@@ -192,3 +192,67 @@ int Graph::maxFlow(Station* src, Station* dest) {
     return maxFlow;
 }
 
+vector<pair<string, int>> Graph::top_k_max_flow_district(int k) {
+    vector<pair<string, int>> result;
+    unordered_map<string, int> d_temp;
+    unordered_map<string, Station*> auxStations = stations;
+
+    for (const auto& station : stations) {
+        auxStations.erase(station.first);
+        for (const auto& station2 : auxStations) {
+            if (station.first == station2.first)
+                continue;
+            if (station.second->getDistrict() != station2.second->getDistrict())
+                continue;
+            d_temp[station.second->getDistrict()] += maxFlow(station.second, station2.second);
+        }
+    }
+
+    while (k > 0 && !d_temp.empty()) {
+        string maxD;
+        int maxFlow = -1;
+        for (const auto& d : d_temp) {
+            if (d.second > maxFlow) {
+                maxFlow = d.second;
+                maxD = d.first;
+            }
+        }
+        result.emplace_back(maxD, maxFlow);
+        d_temp.erase(maxD);
+        k--;
+    }
+
+    return result;
+}
+
+vector<pair<string, int>> Graph::top_k_max_flow_municipality(int k) {
+    vector<pair<string, int>> result;
+    unordered_map<string, int> m_temp;
+    unordered_map<string, Station *> auxStations = stations;
+    for (const auto &station : stations) {
+        auxStations.erase(station.first);
+        for (const auto &station2 : auxStations) {
+            if (station.first == station2.first) {
+                continue;
+            }
+            if (station.second->getMunicipality() != station2.second->getMunicipality()) {
+                continue;
+            }
+            m_temp[station.second->getMunicipality()] += maxFlow(station.second, station2.second);
+        }
+    }
+    while (k > 0) {
+        int max_flow = 0;
+        string max_municipality;
+        for (const auto &m : m_temp) {
+            if (m.second > max_flow) {
+                max_flow = m.second;
+                max_municipality = m.first;
+            }
+        }
+        result.push_back(make_pair(max_municipality, max_flow));
+        m_temp.erase(max_municipality);
+        k--;
+    }
+    return result;
+}
