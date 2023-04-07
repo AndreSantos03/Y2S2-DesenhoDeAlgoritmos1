@@ -42,6 +42,8 @@ public:
 
     void setPath(Trip *path);
 
+    void removeEdge(Station *destination);
+
     Station(string name, string district, string municipality, string township, string line);
 
 private:

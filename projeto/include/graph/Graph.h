@@ -12,6 +12,7 @@
 #include <algorithm>
 #include <unordered_map>
 #include <cmath>
+#include <bits/stdc++.h>
 #include "Station_Trip.h"
 #include "../Utils.h"
 
@@ -28,6 +29,8 @@ public:
     Station *getStation(const string &basicString);
 
     void addEdge(Station *src, Station *dest,const string &service, double capacity);
+
+    void removeEdge(Station *source, Station *destination);
 
     const unordered_map<string, vector<Station *>> &getLines() const;
 

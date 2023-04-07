@@ -349,10 +349,11 @@ void Menu::displayLargerBudgets() {
 void Menu::displayMaxTrains() {
     cout << "Enter Station Name:\n";
     string stationName;
-    cin >> stationName;
-    while(graph.findStation(stationName) != nullptr){
+    getline(cin >> ws, stationName);
+    while(graph.findStation(stationName) == nullptr){
         cout << "Invalid Station Name!\n";
         cout << "Enter Station Name:\n";
+        getline(cin >> ws, stationName);
     }
     int max = graph.maxTrains(stationName);
     cout << stationName << " can have " << max << " trains arriving at the same time\n";

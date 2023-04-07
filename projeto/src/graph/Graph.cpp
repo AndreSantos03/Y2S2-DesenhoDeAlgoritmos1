@@ -14,6 +14,12 @@ void Graph::addEdge(Station *src, Station *dest,const string &service, double ca
 
 }
 
+void Graph::removeEdge(Station *source, Station *destination) {
+    source->removeEdge(destination);
+    destination->removeEdge(source);
+}
+
+
 const unordered_map<string, Station *> Graph::getStations() const {
     return stations;
 }
@@ -258,17 +264,26 @@ vector<pair<string, int>> Graph::top_k_max_flow_municipality(int k) {
 }
 
 int Graph::maxTrains(string stationName) {
-    Station * station = getStation(stationName);
-    int max = 0;
-    for (const auto& stationPair : stations) {
-        if (stationPair.first == stationName) {
-            continue;
-        }
-        int flow = maxFlow(stationPair.second, findStation(stationName));
-        if (flow > max) {
-            max = flow;
+    cout << "OUI!" << endl << endl << endl;
+    Station *  station = findStation(stationName);
+    Station *source_station = new Station("ss", "s", "s","s","s");
+    stations["ss"] = source_station;
+    for (auto &s: stations) {
+        if (s.second != station && stations[s.first]->getEdge().size() == 1) {
+            addEdge(s.second,source_station, "SP", INT_MAX);
         }
     }
-    return max;
 
+    int max_flow = maxFlow(source_station, station);
+    int station_flow = 0;
+
+    for (auto &neighbor: station->getIncoming()) {
+        station_flow += neighbor->getCapacity();
+    }
+    for (auto &s: stations) {
+        if (s.second != station && s.second->getEdge().size() == 1) {
+            removeEdge(s.second,source_station);
+        }
+    }
+    return min(station_flow, max_flow);
 }

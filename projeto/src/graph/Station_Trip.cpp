@@ -55,6 +55,15 @@ void Station::setPath(Trip *path) {
     Station::path = path;
 }
 
+void Station::removeEdge(Station *destination) {
+    for (int i = 0; i < edges.size();i++) {
+        if (edges[i]->getDestinationStation() == destination) {
+            edges.erase(edges.begin() + i);
+            break;
+        }
+    }
+}
+
 Station::Station() = default;
 
 
