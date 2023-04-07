@@ -45,6 +45,7 @@ public:
 
     vector<pair<string, int>> top_k_max_flow_municipality(int k);
 
+    int maxTrains(string stationName);
 private:
     unordered_map<string, Station*> stations;
     unordered_map<string, vector<Station*>> lines;

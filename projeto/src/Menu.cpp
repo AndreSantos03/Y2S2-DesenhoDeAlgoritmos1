@@ -20,7 +20,8 @@ void Menu::display() {
              << "3. Shortest path between two stations\n"
              << "4. Display the pair of stations that needs trains\n"
              << "5. Top-k municipalities/districts with highest budget needs\n"
-             << "6. Quit\n"
+             << "6. Max number of trains that can arrive at a train simultaneously\n"
+             << "7. Quit\n"
              << "Enter your choice: ";
         cin >> choice;
         cout << endl;
@@ -51,6 +52,9 @@ void Menu::display() {
                 displayLargerBudgets();
                 break;
             case 6:
+                displayMaxTrains();
+                break;
+            case 7:
                 cout << "Quitting...\n" << endl;
                 break;
 
@@ -340,6 +344,18 @@ void Menu::displayLargerBudgets() {
     for(auto p : listK){
         cout << p.first << " requires " <<  p.second << " trains.\n";
     }
+}
+
+void Menu::displayMaxTrains() {
+    cout << "Enter Station Name:\n";
+    string stationName;
+    cin >> stationName;
+    while(graph.findStation(stationName) != nullptr){
+        cout << "Invalid Station Name!\n";
+        cout << "Enter Station Name:\n";
+    }
+    int max = graph.maxTrains(stationName);
+    cout << stationName << " can have " << max << " trains arriving at the same time\n";
 }
 
 

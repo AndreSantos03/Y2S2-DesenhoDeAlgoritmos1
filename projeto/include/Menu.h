@@ -29,6 +29,8 @@ private:
     void displayWhichPairNeedMoreCapacity();
 
     void displayLargerBudgets();
+
+    void displayMaxTrains();
 };
 
 #endif //PROJETODA_MENU_H

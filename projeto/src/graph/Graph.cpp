@@ -36,7 +36,7 @@ const unordered_map<string, vector<Station *>> &Graph::getLines() const {
     return lines;
 }
 
-Station *Graph::findStation(const string& src) {
+Station* Graph::findStation(const string& src) {
     for (const auto& station: stations) {
         if (toUpperCase(station.first) == toUpperCase(src)) {
             return station.second;
@@ -255,4 +255,20 @@ vector<pair<string, int>> Graph::top_k_max_flow_municipality(int k) {
         k--;
     }
     return result;
+}
+
+int Graph::maxTrains(string stationName) {
+    Station * station = getStation(stationName);
+    int max = 0;
+    for (const auto& stationPair : stations) {
+        if (stationPair.first == stationName) {
+            continue;
+        }
+        int flow = maxFlow(stationPair.second, findStation(stationName));
+        if (flow > max) {
+            max = flow;
+        }
+    }
+    return max;
+
 }
