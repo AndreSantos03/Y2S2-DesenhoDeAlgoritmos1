@@ -326,19 +326,29 @@ void Menu::displayWhichPairNeedMoreCapacity(){
 }
 
 void Menu::displayLargerBudgets() {
-    char ans;
+    string ans;
     cout << "District or Municipality? (d/m):\n";
-    cin >> ans;
-    while(ans != 'm' && ans != 'd'){
+    getline(cin >> ws, ans);
+    while(toUpperCase(ans) != "M" && toUpperCase(ans) != "D"){
         cout << ans << endl;
         cout << "Invalid answer!\nDistrict or Municipality? (d/m):\n";
-        cin >> ans;
+        getline(cin >> ws, ans);
     }
     int ammount;
-    cout << "Ammount to be displayed:\n";
-    cin >> ammount;
+    while (true) {
+        cout << "Amount to be displayed:\n";
+        cin >> ammount;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
+            cout << "Error: Invalid input. Please enter a valid number.\n";
+        } else {
+            break;
+        }
+    }
+
     vector<pair<string,int>> listK;
-    if(ans == 'd')
+    if(toUpperCase(ans) == "D")
         listK = graph.top_k_max_flow_district(ammount);
     else listK = graph.top_k_max_flow_municipality(ammount);
     for(auto p : listK){
@@ -356,7 +366,7 @@ void Menu::displayMaxTrains() {
         getline(cin >> ws, stationName);
     }
     int max = graph.maxTrains(stationName);
-    cout << stationName << " can have " << max << " trains arriving at the same time\n";
+    cout << graph.findStation(stationName)->getName() << " can have " << max << " trains arriving at the same time\n";
 }
 
 
