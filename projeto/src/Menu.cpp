@@ -46,7 +46,7 @@ void Menu::display() {
                 displayShortestPath();
                 break;
             case 4:
-                displayWhichPairNeedMoreCapacity();
+                displayPairsWithMaximumCapacity();
                 break;
             case 5:
                 displayLargerBudgets();
@@ -293,37 +293,34 @@ void Menu::displayShortestPath(){
 
 }
 
-void Menu::displayWhichPairNeedMoreCapacity(){
+void Menu::displayPairsWithMaximumCapacity(){
     int maximumFlow = 0;
     unordered_map<string,string> pairStations;
-    for(auto stationX : graph.getStations()){
-        for(auto stationY : graph.getStations()){
-            if(!(stationX.second == stationY.second)){
+    auto stations = graph.getStations();
+    for(auto stationX : stations){
+        for(auto stationY : stations){
+            if(stationX.second != stationY.second){
                 int flow = graph.maxFlow(stationX.second, stationY.second);
                 if(maximumFlow < flow){
                     maximumFlow = flow;
+                    pairStations.clear();
+                    pairStations.insert({stationX.second->getName(), stationY.second->getName()});
+                }
+                else if (flow == maximumFlow){
+                    pairStations.insert({stationX.second->getName(), stationY.second->getName()});
                 }
             }
         }
     }
 
-    for(auto stationI : graph.getStations()){
-        for(auto stationJ : graph.getStations()){
-            if(!(stationI.second == stationJ.second)){
-                int iflow = graph.maxFlow(stationI.second, stationJ.second);
-                if (iflow == maximumFlow){
-                    pairStations.insert({{stationI.second->getName(),stationJ.second->getName()}});
-                }
-            }
-        }
-    }
+    cout << endl << "Max: " << maximumFlow << endl;
 
-    cout << endl << "Max: " << maximumFlow;
-
-    for(auto par : pairStations){
-        cout << endl << par.first << " - " << par.second << endl;
+    for(auto pair : pairStations){
+        cout << pair.first << " - " << pair.second << endl << endl;
     }
 }
+
+
 
 void Menu::displayLargerBudgets() {
     string ans;

@@ -26,7 +26,7 @@ private:
 
     void displayShortestPath();
 
-    void displayWhichPairNeedMoreCapacity();
+    void displayPairsWithMaximumCapacity();
 
     void displayLargerBudgets();
 
