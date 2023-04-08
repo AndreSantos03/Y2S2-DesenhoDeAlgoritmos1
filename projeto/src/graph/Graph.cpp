@@ -5,6 +5,13 @@
 #include "../../include/graph/Graph.h"
 #include "../../include/graph/Station_Trip.h"
 
+int Graph::findCost(Trip trip) {
+    if(trip.getService() == "STANDARD") return 2;
+
+    else if(trip.getService() == "ALFA PENDULAR") return 4;
+
+    return -1;
+}
 
 void Graph::addEdge(Station *src, Station *dest,const string &service, double capacity) {
 
@@ -30,7 +37,9 @@ Station* Graph::getStation(const string &basicString) {
 
 
 void Graph::addStations(Station *station) {
-    stations[station->getName()] = station;
+    if (stations.find(station->getName()) == stations.end()) {
+        stations[station->getName()] = station;
+    }
 }
 
 void Graph::addLines(const string &lineName, Station *station) {
@@ -42,9 +51,10 @@ const unordered_map<string, vector<Station *>> &Graph::getLines() const {
     return lines;
 }
 
+
 Station* Graph::findStation(const string& src) {
     for (const auto& station: stations) {
-        if (toUpperCase(station.first) == toUpperCase(src)) {
+        if (station.first == src) {
             return station.second;
         }
     }
@@ -264,7 +274,6 @@ vector<pair<string, int>> Graph::top_k_max_flow_municipality(int k) {
 }
 
 int Graph::maxTrains(string stationName) {
-    cout << "OUI!" << endl << endl << endl;
     Station *  station = findStation(stationName);
     Station *source_station = new Station("ss", "s", "s","s","s");
     stations["ss"] = source_station;
@@ -286,4 +295,48 @@ int Graph::maxTrains(string stationName) {
         }
     }
     return min(station_flow, max_flow);
+}
+
+pair<int, int> Graph::minCost(Station* src, Station* dest) {
+    for (auto& station : stations) {
+        for (auto trip : station.second->getEdge())
+            trip->setFlow(0);
+    }
+
+    int maxFlow = 0;
+    int minCost = 0;
+    bool foundPath = true;
+
+    while (foundPath) {
+        foundPath = bfsEdmondsKarp(src, dest);
+
+        if (foundPath) {
+            int mrc = INT32_MAX;
+            Station* currStation = dest;
+
+            while (currStation != src) {
+                Trip* path = currStation->getPath();
+
+                if (path->getReverse() == nullptr)
+                    mrc = std::min(mrc, static_cast<int>(path->getCapacity() - path->getFlow()));
+                else
+                    mrc = std::min(mrc, static_cast<int>(path->getReverse()->getFlow()));
+
+                int cost = this->findCost(*path);
+
+                currStation = path->getSourceStation();
+
+                minCost += mrc * cost;
+
+                if (path->getReverse() == nullptr)
+                    path->setFlow(path->getFlow() + mrc);
+                else
+                    path->getReverse()->setFlow(path->getReverse()->getFlow() - mrc);
+            }
+
+            maxFlow += mrc;
+        }
+    }
+
+    return {maxFlow, minCost};
 }

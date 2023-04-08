@@ -6,10 +6,13 @@
 #define PROJETODA_UTILS_H
 
 #include <string>
+#include <locale>
+#include <iostream>
 
 using namespace std;
 
 string toUpperCase(const string& str);
+
 
 
 

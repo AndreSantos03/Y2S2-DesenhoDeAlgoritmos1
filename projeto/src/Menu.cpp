@@ -15,13 +15,15 @@ Menu::Menu() {
 void Menu::display() {
     int choice;
     do {
-        cout << "1. Specific Station Information\n"
+        cout << "---------------------------------> MENU <-------------------------------------\n"
+             << "1. Specific Station Information\n"
              << "2. Maximum number of trains that can simultaneously travel between two stations\n"
              << "3. Shortest path between two stations\n"
              << "4. Display the pair of stations that needs trains\n"
              << "5. Top-k municipalities/districts with highest budget needs\n"
              << "6. Max number of trains that can arrive at a train simultaneously\n"
-             << "7. Quit\n"
+             << "7. Maximum concurrent trains with minimal cost for the company between two stations\n"
+             << "8. Quit\n"
              << "Enter your choice: ";
         cin >> choice;
         cout << endl;
@@ -55,6 +57,9 @@ void Menu::display() {
                 displayMaxTrains();
                 break;
             case 7:
+                displayTest();
+                break;
+            case 8:
                 cout << "Quitting...\n" << endl;
                 break;
 
@@ -62,7 +67,7 @@ void Menu::display() {
                 cout << "Invalid choice, please try again.\n";
                 break;
         }
-    } while (choice != 6);
+    } while (choice != 8);
 }
 
 void Menu::displayStationInformation() {
@@ -119,7 +124,7 @@ void Menu::displayStationInformation() {
 void Menu::displayStationInformationName(const string& name) {
     bool flag = false;
     for (const auto& station : graph.getStations()) {
-        if(toUpperCase(station.second->getName()) == toUpperCase(name)){
+        if(station.second->getName() == name){
             flag = true;
             cout << "Station: " << station.second->getName() << endl;
             if(!(station.second->getDistrict().empty())){
@@ -171,7 +176,7 @@ void Menu::displayStationsWithChar(const string& in) {
         cout << "All stations from District: " << district;
         cout << endl;
         for (const auto& station : graph.getStations()) {
-            if(toUpperCase(district) == toUpperCase(station.second->getDistrict())){
+            if(district == station.second->getDistrict()){
                 flag = true;
                 cout << counter << ":" << station.second->getName() << endl;
                 counter++;
@@ -191,7 +196,7 @@ void Menu::displayStationsWithChar(const string& in) {
         cout << "All stations from Municipality: " << municipality;
         cout << endl;
         for (const auto& station : graph.getStations()) {
-            if(toUpperCase(municipality) == toUpperCase(station.second->getMunicipality())){
+            if(municipality == station.second->getMunicipality()){
                 flag = true;
                 cout << counter << ":" << station.second->getName() << endl;
                 counter++;
@@ -211,7 +216,7 @@ void Menu::displayStationsWithChar(const string& in) {
         cout << "All stations from Line: " << line;
         cout << endl;
         for (const auto& station : graph.getStations()) {
-            if(toUpperCase(line) == toUpperCase(station.second->getLine())){
+            if(line == station.second->getLine()){
                 flag = true;
                 cout << counter << ":" << station.second->getName() << endl;
                 counter++;
@@ -354,16 +359,41 @@ void Menu::displayLargerBudgets() {
 }
 
 void Menu::displayMaxTrains() {
-    cout << "Enter Station Name:\n";
+    cout << "Enter Station Name:";
     string stationName;
     getline(cin >> ws, stationName);
     while(graph.findStation(stationName) == nullptr){
-        cout << "Invalid Station Name!\n";
-        cout << "Enter Station Name:\n";
+        cout << endl << "Invalid Station Name!\n";
+        cout << "Enter Station Name:";
         getline(cin >> ws, stationName);
     }
     int max = graph.maxTrains(stationName);
-    cout << graph.findStation(stationName)->getName() << " can have " << max << " trains arriving at the same time\n";
+    cout << endl << graph.findStation(stationName)->getName() << " can have " << max << " trains arriving at the same time\n" << endl << endl;
 }
+
+void Menu::displayTest() {
+    string srcString, destString;
+    Station * src;
+    Station * dest;
+    cout << "Insert Source Station Name:";
+    getline(cin >> ws, srcString);
+    src = graph.findStation(srcString);
+    if(src== nullptr){
+        cout << srcString << " is not a train station." <<endl;
+        cout << "Returning..."<<endl<<endl;
+        return;
+    }
+    cout << "Insert Destination Station Name:";
+    getline(cin >> ws, destString);
+    dest = graph.findStation(destString);
+    if(dest== nullptr){
+        cout << destString << " is not a train station." <<endl;
+        cout << "Returning..."<<endl<<endl;
+        return;
+    }
+    const pair<int, int> min_cost = graph.minCost(src, dest);
+    cout << endl << "Only " << min_cost.first << " trains can travel concurrently between " << src->getName() << " and " << dest->getName() << " with a minimum cost of " << min_cost.second << " euros.\n" << endl;
+}
+
 
 

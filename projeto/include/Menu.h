@@ -31,6 +31,8 @@ private:
     void displayLargerBudgets();
 
     void displayMaxTrains();
+
+    void displayTest();
 };
 
 #endif //PROJETODA_MENU_H

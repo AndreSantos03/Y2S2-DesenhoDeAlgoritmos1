@@ -126,3 +126,5 @@ int Trip::getFlow() const {
 void Trip::setFlow(int flow) {
     Trip::flow = flow;
 }
+
+

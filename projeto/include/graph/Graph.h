@@ -49,7 +49,13 @@ public:
     vector<pair<string, int>> top_k_max_flow_municipality(int k);
 
     int maxTrains(string stationName);
+
+    pair<int, int> minCost(Station *src, Station *dest);
+
+    int findCost(Trip trip);
+
 private:
+
     unordered_map<string, Station*> stations;
     unordered_map<string, vector<Station*>> lines;
 
