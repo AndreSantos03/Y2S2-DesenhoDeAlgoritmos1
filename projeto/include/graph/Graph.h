@@ -1,13 +1,3 @@
-/**
- * @file Graph.h
- * @brief Declaration of Graph class, which represents a graph of stations and their connections.
- *
- * This file contains the declaration of the Graph class, which represents a graph of stations and their connections.
- * It provides various methods to add stations, add edges between stations, find paths between stations, calculate
- * maximum flow, and perform other graph-related operations.
- *
- */
-
 #ifndef PROJETODA_GRAPH_H
 #define PROJETODA_GRAPH_H
 
@@ -24,6 +14,14 @@
 
 using namespace std;
 
+/**
+ * @brief Class representing the graph data structure.
+ *
+ * This class represents a graph data structure that stores information about stations and lines.
+ * It provides methods for adding and retrieving stations, adding and removing edges between stations,
+ * finding shortest paths, calculating maximum flow, and retrieving top k districts and municipalities
+ * with the highest maximum flow.
+ */
 class Graph {
 public:
 

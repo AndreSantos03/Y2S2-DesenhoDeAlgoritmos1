@@ -9,6 +9,6 @@ var searchData=
   ['displayshortestpath_6',['displayShortestPath',['../class_menu.html#aeb5076567fa464728c8cb955801d31e5',1,'Menu']]],
   ['displaystationinformation_7',['displayStationInformation',['../class_menu.html#a4deefeeb2d83a62e62781e3051f5fc51',1,'Menu']]],
   ['displaystationinformationname_8',['displayStationInformationName',['../class_menu.html#a97649fad1a6dca41ddc644ab2ca8b322',1,'Menu']]],
-  ['displaystationswithchar_9',['displayStationsWithChar',['../class_menu.html#a87315958fa95229ffa9a796a0bfafbc2',1,'Menu']]],
+  ['displaystationswithchar_9',['displayStationsWithChar',['../class_menu.html#a76485f3e5a663a0826e0de236573c49c',1,'Menu']]],
   ['displaytest_10',['displayTest',['../class_menu.html#a0bb35295a073ce65cd4ae397e85c8e8f',1,'Menu']]]
 ];

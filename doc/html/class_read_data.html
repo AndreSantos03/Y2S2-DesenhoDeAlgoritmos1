@@ -77,17 +77,24 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class for reading and storing data from CSV files into a graph data structure.  
+ <a href="class_read_data.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_read_data_8h_source.html">ReadData.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abdc3a24ea2bfab9690d0dd9fde90542e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_read_data.html#abdc3a24ea2bfab9690d0dd9fde90542e">ReadData</a> ()</td></tr>
+<tr class="memdesc:abdc3a24ea2bfab9690d0dd9fde90542e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="class_read_data.html" title="Class for reading and storing data from CSV files into a graph data structure.">ReadData</a> class.  <a href="class_read_data.html#abdc3a24ea2bfab9690d0dd9fde90542e">More...</a><br /></td></tr>
 <tr class="separator:abdc3a24ea2bfab9690d0dd9fde90542e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9914ab555c75b5a7f052dafcb47e44c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_read_data.html#a9914ab555c75b5a7f052dafcb47e44c3">readStationsCSV</a> (const string &amp;filename)</td></tr>
+<tr class="memdesc:a9914ab555c75b5a7f052dafcb47e44c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read station data from a CSV file and populate the graph.  <a href="class_read_data.html#a9914ab555c75b5a7f052dafcb47e44c3">More...</a><br /></td></tr>
 <tr class="separator:a9914ab555c75b5a7f052dafcb47e44c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac56b1d4f19830c4174ba12da6134d5a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_read_data.html#ac56b1d4f19830c4174ba12da6134d5a4">readNetworkCSV</a> (const string &amp;filename)</td></tr>
+<tr class="memdesc:ac56b1d4f19830c4174ba12da6134d5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read network data from a CSV file and populate the graph.  <a href="class_read_data.html#ac56b1d4f19830c4174ba12da6134d5a4">More...</a><br /></td></tr>
 <tr class="separator:ac56b1d4f19830c4174ba12da6134d5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31be9a4f233e31b87bb44423343ea1a2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_graph.html">Graph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_read_data.html#a31be9a4f233e31b87bb44423343ea1a2">getGraph</a> () const</td></tr>
+<tr class="memdesc:a31be9a4f233e31b87bb44423343ea1a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the graph containing the read data.  <a href="class_read_data.html#a31be9a4f233e31b87bb44423343ea1a2">More...</a><br /></td></tr>
 <tr class="separator:a31be9a4f233e31b87bb44423343ea1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -95,7 +102,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ae0eb35c9c5b271a992406b74b5b96e52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_graph.html">Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_read_data.html#ae0eb35c9c5b271a992406b74b5b96e52">graph</a></td></tr>
 <tr class="separator:ae0eb35c9c5b271a992406b74b5b96e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class for reading and storing data from CSV files into a graph data structure. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abdc3a24ea2bfab9690d0dd9fde90542e" name="abdc3a24ea2bfab9690d0dd9fde90542e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdc3a24ea2bfab9690d0dd9fde90542e">&#9670;&#160;</a></span>ReadData()</h2>
 
@@ -110,6 +119,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="class_read_data.html" title="Class for reading and storing data from CSV files into a graph data structure.">ReadData</a> class. </p>
 
 </div>
 </div>
@@ -129,6 +140,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the graph containing the read data. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the graph containing the read data. </dd></dl>
+
 </div>
 </div>
 <a id="ac56b1d4f19830c4174ba12da6134d5a4" name="ac56b1d4f19830c4174ba12da6134d5a4"></a>
@@ -147,6 +161,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Read network data from a CSV file and populate the graph. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Name of the CSV file containing network data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a9914ab555c75b5a7f052dafcb47e44c3" name="a9914ab555c75b5a7f052dafcb47e44c3"></a>
@@ -164,6 +186,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read station data from a CSV file and populate the graph. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Name of the CSV file containing station data. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -187,6 +217,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p ><a class="el" href="class_graph.html" title="Class representing the graph data structure.">Graph</a> data structure to store the read data. </p>
 
 </div>
 </div>

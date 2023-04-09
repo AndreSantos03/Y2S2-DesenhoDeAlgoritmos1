@@ -88,7 +88,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a73d335726aad1d844d81cda6d9fd74e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="class_station.html" title="Class representing a train station.">Station</a> class.  <a href="class_station.html#a73d335726aad1d844d81cda6d9fd74e6">More...</a><br /></td></tr>
 <tr class="separator:a73d335726aad1d844d81cda6d9fd74e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04a0cd0cd98a056fe31d7e94f7698168"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a04a0cd0cd98a056fe31d7e94f7698168">addEdge</a> (<a class="el" href="class_station.html">Station</a> *dest, double capacity, const string &amp;service)</td></tr>
-<tr class="memdesc:a04a0cd0cd98a056fe31d7e94f7698168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge to the <a class="el" href="class_station.html" title="Class representing a train station.">Station</a>'s adjacency list.  <a href="class_station.html#a04a0cd0cd98a056fe31d7e94f7698168">More...</a><br /></td></tr>
+<tr class="memdesc:a04a0cd0cd98a056fe31d7e94f7698168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge to the adjacency list of the station.  <a href="class_station.html#a04a0cd0cd98a056fe31d7e94f7698168">More...</a><br /></td></tr>
 <tr class="separator:a04a0cd0cd98a056fe31d7e94f7698168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a11b1e1e738259b77c6b76e17816a99"><td class="memItemLeft" align="right" valign="top">const string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_station.html#a9a11b1e1e738259b77c6b76e17816a99">getName</a> () const</td></tr>
 <tr class="memdesc:a9a11b1e1e738259b77c6b76e17816a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the name of the <a class="el" href="class_station.html" title="Class representing a train station.">Station</a>.  <a href="class_station.html#a9a11b1e1e738259b77c6b76e17816a99">More...</a><br /></td></tr>
@@ -281,11 +281,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds an edge to the <a class="el" href="class_station.html" title="Class representing a train station.">Station</a>'s adjacency list. </p>
-<p >This function adds a directed edge from the current <a class="el" href="class_station.html" title="Class representing a train station.">Station</a> to the destination <a class="el" href="class_station.html" title="Class representing a train station.">Station</a>, with the given capacity and service type.</p>
+<p>Adds an edge to the adjacency list of the station. </p>
+<p >This function adds a directed edge from the current station to the destination station, with the given capacity and service type.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dest</td><td>Pointer to the destination <a class="el" href="class_station.html" title="Class representing a train station.">Station</a>. </td></tr>
+    <tr><td class="paramname">dest</td><td>Pointer to the destination station. </td></tr>
     <tr><td class="paramname">capacity</td><td>Capacity of the edge. </td></tr>
     <tr><td class="paramname">service</td><td>Service type of the edge. </td></tr>
   </table>
