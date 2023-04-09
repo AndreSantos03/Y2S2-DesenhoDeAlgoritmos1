@@ -24,13 +24,13 @@ public:
 
     void addStations(Station *station);
 
-    const unordered_map<string, Station *> getStations() const;
+    unordered_map<string, Station *> getStations() const;
 
     Station *getStation(const string &basicString);
 
-    void addEdge(Station *src, Station *dest,const string &service, double capacity);
+    static void addEdge(Station *src, Station *dest,const string &service, double capacity);
 
-    void removeEdge(Station *source, Station *destination);
+    static void removeEdge(Station *source, Station *destination);
 
     const unordered_map<string, vector<Station *>> &getLines() const;
 
@@ -48,11 +48,11 @@ public:
 
     vector<pair<string, int>> top_k_max_flow_municipality(int k);
 
-    int maxTrains(string stationName);
+    int maxTrains(const string& stationName);
 
     pair<int, int> minCost(Station *src, Station *dest);
 
-    int findCost(Trip trip);
+    static int findCost(const Trip& trip);
 
 private:
 

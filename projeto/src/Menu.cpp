@@ -1,6 +1,5 @@
 #include "../include/Menu.h"
-#include "../include/graph/Graph.h"
-#include "../include/Utils.h"
+
 
 #include <string>
 
@@ -302,8 +301,8 @@ void Menu::displayPairsWithMaximumCapacity(){
     int maximumFlow = 0;
     unordered_map<string,string> pairStations;
     auto stations = graph.getStations();
-    for(auto stationX : stations){
-        for(auto stationY : stations){
+    for(const auto& stationX : stations){
+        for(const auto& stationY : stations){
             if(stationX.second != stationY.second){
                 int flow = graph.maxFlow(stationX.second, stationY.second);
                 if(maximumFlow < flow){
@@ -320,7 +319,7 @@ void Menu::displayPairsWithMaximumCapacity(){
 
     cout << endl << "Max: " << maximumFlow << endl;
 
-    for(auto pair : pairStations){
+    for(const auto& pair : pairStations){
         cout << pair.first << " - " << pair.second << endl << endl;
     }
 }
@@ -353,7 +352,7 @@ void Menu::displayLargerBudgets() {
     if(toUpperCase(ans) == "D")
         listK = graph.top_k_max_flow_district(ammount);
     else listK = graph.top_k_max_flow_municipality(ammount);
-    for(auto p : listK){
+    for(const auto& p : listK){
         cout << p.first << " requires " <<  p.second << " trains.\n";
     }
 }

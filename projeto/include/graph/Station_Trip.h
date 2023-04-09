@@ -36,11 +36,11 @@ public:
 
     bool isVisited() const;
 
-    void setVisited(bool visited);
+    void setVisited(bool visited_);
 
     Trip *getPath() const;
 
-    void setPath(Trip *path);
+    void setPath(Trip *path_);
 
     void removeEdge(Station *destination);
 
@@ -74,19 +74,19 @@ public:
 
     Station *getSourceStation() const;
 
-    void setSourceStation(Station *sourceStation);
+    void setSourceStation(Station *sourceStation_);
 
     Station *getDestinationStation() const;
 
-    void setDestinationStation(Station *destinationStation);
+    void setDestinationStation(Station *destinationStation_);
 
     Trip *getReverse() const;
 
-    void setReverse(Trip *reverse);
+    void setReverse(Trip *reverse_);
 
     int getFlow() const;
 
-    void setFlow(int flow);
+    void setFlow(int flow_);
 
 private:
     Station *sourceStation;

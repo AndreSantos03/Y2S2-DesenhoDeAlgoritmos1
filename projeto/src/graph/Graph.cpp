@@ -3,9 +3,8 @@
 //
 
 #include "../../include/graph/Graph.h"
-#include "../../include/graph/Station_Trip.h"
 
-int Graph::findCost(Trip trip) {
+int Graph::findCost(const Trip& trip) {
     if(trip.getService() == "STANDARD") return 2;
 
     else if(trip.getService() == "ALFA PENDULAR") return 4;
@@ -27,7 +26,7 @@ void Graph::removeEdge(Station *source, Station *destination) {
 }
 
 
-const unordered_map<string, Station *> Graph::getStations() const {
+unordered_map<string, Station *> Graph::getStations() const {
     return stations;
 }
 
@@ -67,7 +66,7 @@ vector<string> Graph::dijkstra(Station* src, Station* dest) {
     unordered_map<string, Station*> previous;
     unordered_map<string, int> distances;
 
-    for (auto station : stations) {
+    for (const auto& station : stations) {
         unvisited[station.second->getName()] = station.second;
         distances[station.second->getName()] = INT_MAX;
     }
@@ -97,7 +96,7 @@ vector<string> Graph::dijkstra(Station* src, Station* dest) {
     }
 
     if (distances[dest->getName()] == INT_MAX) {
-        return vector<string>();
+        return {};
     }
 
     vector<string> path;
@@ -266,16 +265,16 @@ vector<pair<string, int>> Graph::top_k_max_flow_municipality(int k) {
                 max_municipality = m.first;
             }
         }
-        result.push_back(make_pair(max_municipality, max_flow));
+        result.emplace_back(max_municipality, max_flow);
         m_temp.erase(max_municipality);
         k--;
     }
     return result;
 }
 
-int Graph::maxTrains(string stationName) {
+int Graph::maxTrains(const string& stationName) {
     Station *  station = findStation(stationName);
-    Station *source_station = new Station("ss", "s", "s","s","s");
+    auto *source_station = new Station("ss", "s", "s","s","s");
     stations["ss"] = source_station;
     for (auto &s: stations) {
         if (s.second != station && stations[s.first]->getEdge().size() == 1) {
@@ -287,7 +286,7 @@ int Graph::maxTrains(string stationName) {
     int station_flow = 0;
 
     for (auto &neighbor: station->getIncoming()) {
-        station_flow += neighbor->getCapacity();
+        station_flow += static_cast<int> (neighbor->getCapacity());
     }
     for (auto &s: stations) {
         if (s.second != station && s.second->getEdge().size() == 1) {

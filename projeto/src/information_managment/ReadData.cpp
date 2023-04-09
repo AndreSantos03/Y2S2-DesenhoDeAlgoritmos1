@@ -1,5 +1,5 @@
 #include "../../include/information_managment/ReadData.h"
-#include "../../include/graph/Graph.h"
+
 
 ReadData::ReadData() {
     readStationsCSV("../projeto/data/stations.csv");
@@ -57,7 +57,7 @@ void ReadData::readNetworkCSV(const string &filename) {
 
             Station *srcStation = graph.getStation(src);
             Station *destStation = graph.getStation(dest);
-            graph.addEdge(srcStation, destStation, service, stod(capacity));
+            Graph::addEdge(srcStation, destStation, service, stod(capacity));
             graph.addLines(srcStation->getLine(), srcStation);
         }
 

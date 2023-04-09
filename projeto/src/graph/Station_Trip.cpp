@@ -43,16 +43,16 @@ bool Station::isVisited() const {
     return visited;
 }
 
-void Station::setVisited(bool visited) {
-    Station::visited = visited;
+void Station::setVisited(bool visited_) {
+    Station::visited = visited_;
 }
 
 Trip *Station::getPath() const {
     return path;
 }
 
-void Station::setPath(Trip *path) {
-    Station::path = path;
+void Station::setPath(Trip *path_) {
+    Station::path = path_;
 }
 
 void Station::removeEdge(Station *destination) {
@@ -99,32 +99,32 @@ Station *Trip::getSourceStation() const {
     return sourceStation;
 }
 
-void Trip::setSourceStation(Station *sourceStation) {
-    Trip::sourceStation = sourceStation;
+void Trip::setSourceStation(Station *sourceStation_) {
+    Trip::sourceStation = sourceStation_;
 }
 
 Station *Trip::getDestinationStation() const {
     return destinationStation;
 }
 
-void Trip::setDestinationStation(Station *destinationStation) {
-    Trip::destinationStation = destinationStation;
+void Trip::setDestinationStation(Station *destinationStation_) {
+    Trip::destinationStation = destinationStation_;
 }
 
 Trip *Trip::getReverse() const {
     return reverse;
 }
 
-void Trip::setReverse(Trip *reverse) {
-    Trip::reverse = reverse;
+void Trip::setReverse(Trip *reverse_) {
+    Trip::reverse = reverse_;
 }
 
 int Trip::getFlow() const {
     return flow;
 }
 
-void Trip::setFlow(int flow) {
-    Trip::flow = flow;
+void Trip::setFlow(int flow_) {
+    Trip::flow = flow_;
 }
 
 
