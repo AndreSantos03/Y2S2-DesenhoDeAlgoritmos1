@@ -14,8 +14,6 @@ private:
     Graph graph;
     ReadData data;
 
-    void displayGraphInfo() const;
-
     void displayStationInformation();
 
     void displayStationInformationName(const string& name);
