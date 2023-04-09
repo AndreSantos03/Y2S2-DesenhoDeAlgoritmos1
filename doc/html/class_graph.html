@@ -372,10 +372,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Find the cost of a given trip based on its service type. </p>
-<p >The <code><a class="el" href="class_graph.html#a34a31c674a6b0a41d25e7e50fe5ab8ab" title="Find the cost of a given trip based on its service type.">findCost()</a></code> function takes a constant reference to a <code><a class="el" href="class_trip.html">Trip</a></code> object as an argument, representing the trip for which the cost needs to be determined. It then retrieves the service type of the trip (either "STANDARD" or "ALFA PENDULAR") and returns the corresponding cost value (2 for "STANDARD" and 4 for "ALFA PENDULAR").</p>
+<p >The <code><a class="el" href="class_graph.html#a34a31c674a6b0a41d25e7e50fe5ab8ab" title="Find the cost of a given trip based on its service type.">findCost()</a></code> function takes a constant reference to a <code><a class="el" href="class_trip.html" title="Class representing a trip between two stations.">Trip</a></code> object as an argument, representing the trip for which the cost needs to be determined. It then retrieves the service type of the trip (either "STANDARD" or "ALFA PENDULAR") and returns the corresponding cost value (2 for "STANDARD" and 4 for "ALFA PENDULAR").</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">trip</td><td>The <code><a class="el" href="class_trip.html">Trip</a></code> object for which the cost needs to be determined.</td></tr>
+    <tr><td class="paramname">trip</td><td>The <code><a class="el" href="class_trip.html" title="Class representing a trip between two stations.">Trip</a></code> object for which the cost needs to be determined.</td></tr>
   </table>
   </dd>
 </dl>
@@ -575,7 +575,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calculate the maximum concurrent trains with minimal cost for the company between two stations. </p>
-<p >The <code><a class="el" href="class_graph.html#a7334fc0b4ea50ee6d8541416387728e2" title="Calculate the maximum concurrent trains with minimal cost for the company between two stations.">minCost()</a></code> function calculates the maximum concurrent trains that can travel between two stations, while minimizing the cost for the company. It takes two pointers to <code><a class="el" href="class_station.html">Station</a></code> objects as arguments, representing the source station (<code>src</code>) and the destination station (<code>dest</code>), respectively.</p>
+<p >The <code><a class="el" href="class_graph.html#a7334fc0b4ea50ee6d8541416387728e2" title="Calculate the maximum concurrent trains with minimal cost for the company between two stations.">minCost()</a></code> function calculates the maximum concurrent trains that can travel between two stations, while minimizing the cost for the company. It takes two pointers to <code><a class="el" href="class_station.html" title="Class representing a train station.">Station</a></code> objects as arguments, representing the source station (<code>src</code>) and the destination station (<code>dest</code>), respectively.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">src</td><td>Pointer to the source station. </td></tr>
@@ -711,7 +711,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The map of lines in the graph. </p>
-<p >The <code>lines</code> member variable is an unordered map where the keys are line names and the values are vectors of pointers to <code><a class="el" href="class_station.html">Station</a></code> objects. It represents the collection of lines in the graph that are added using the <code><a class="el" href="class_graph.html#a88a30f0023656702114809f6d823da9e" title="Adds a station to a line in the graph.">addLines()</a></code> function. </p>
+<p >The <code>lines</code> member variable is an unordered map where the keys are line names and the values are vectors of pointers to <code><a class="el" href="class_station.html" title="Class representing a train station.">Station</a></code> objects. It represents the collection of lines in the graph that are added using the <code><a class="el" href="class_graph.html#a88a30f0023656702114809f6d823da9e" title="Adds a station to a line in the graph.">addLines()</a></code> function. </p>
 
 </div>
 </div>
@@ -736,7 +736,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The map of stations in the graph. </p>
-<p >The <code>stations</code> member variable is an unordered map where the keys are station names and the values are pointers to <code><a class="el" href="class_station.html">Station</a></code> objects. It represents the collection of stations in the graph that are added using the <code><a class="el" href="class_graph.html#a3414af7e76b9e70e0a1398202e40882b" title="Adds a station to the graph.">addStations()</a></code> function. </p>
+<p >The <code>stations</code> member variable is an unordered map where the keys are station names and the values are pointers to <code><a class="el" href="class_station.html" title="Class representing a train station.">Station</a></code> objects. It represents the collection of stations in the graph that are added using the <code><a class="el" href="class_graph.html#a3414af7e76b9e70e0a1398202e40882b" title="Adds a station to the graph.">addStations()</a></code> function. </p>
 
 </div>
 </div>

@@ -14,19 +14,38 @@
 
 using namespace std;
 
+
+/**
+ * @brief Class for reading and storing data from CSV files into a graph data structure.
+ */
 class ReadData {
 private:
 
-    Graph graph;
+    Graph graph; /**< Graph data structure to store the read data. */
 
 public:
 
+    /**
+     * @brief Constructor for the ReadData class.
+     */
     ReadData();
 
+    /**
+     * @brief Read station data from a CSV file and populate the graph.
+     * @param filename Name of the CSV file containing station data.
+     */
     void readStationsCSV(const string& filename);
 
+    /**
+     * @brief Read network data from a CSV file and populate the graph.
+     * @param filename Name of the CSV file containing network data.
+     */
     void readNetworkCSV(const string& filename);
 
+    /**
+     * @brief Get the graph containing the read data.
+     * @return Constant reference to the graph containing the read data.
+     */
     const Graph &getGraph() const;
 
 };

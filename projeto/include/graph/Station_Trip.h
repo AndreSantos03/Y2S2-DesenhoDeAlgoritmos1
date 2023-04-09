@@ -25,15 +25,15 @@ public:
     Station();
 
     /**
-     * @brief Adds an edge to the Station's adjacency list.
-     *
-     * This function adds a directed edge from the current Station to the destination Station,
-     * with the given capacity and service type.
-     *
-     * @param dest Pointer to the destination Station.
-     * @param capacity Capacity of the edge.
-     * @param service Service type of the edge.
-     */
+    * @brief Adds an edge to the adjacency list of the station.
+    *
+    * This function adds a directed edge from the current station to the destination station,
+    * with the given capacity and service type.
+    *
+    * @param dest Pointer to the destination station.
+    * @param capacity Capacity of the edge.
+    * @param service Service type of the edge.
+    */
     void addEdge(Station *dest, double capacity, const string &service);
 
     /**
