@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['getcapacity_0',['getCapacity',['../class_trip.html#a1239c1de226eb83a4e9e3cbcbb7321e3',1,'Trip']]],
+  ['getdestinationstation_1',['getDestinationStation',['../class_trip.html#a41215a5afb27f5f6d328e0e4ca9d2f70',1,'Trip']]],
+  ['getdistrict_2',['getDistrict',['../class_station.html#a9b1777b396029adcdac76514cb208f8b',1,'Station']]],
+  ['getedge_3',['getEdge',['../class_station.html#addc10aed4babe75a6f477f2712d5360f',1,'Station']]],
+  ['getflow_4',['getFlow',['../class_trip.html#afa196f6878e7b0683b40981cb3f70460',1,'Trip']]],
+  ['getgraph_5',['getGraph',['../class_read_data.html#a31be9a4f233e31b87bb44423343ea1a2',1,'ReadData']]],
+  ['getincoming_6',['getIncoming',['../class_station.html#a0fa2442e898f17564a0a485bf6b809f5',1,'Station']]],
+  ['getline_7',['getLine',['../class_station.html#aab31a7d7b664b7a45288e09362a9a11d',1,'Station']]],
+  ['getlines_8',['getLines',['../class_graph.html#a9ed0f2f6f3aa04b52dcd18672a8201de',1,'Graph']]],
+  ['getmunicipality_9',['getMunicipality',['../class_station.html#add59cb361f91a4e47d9b503c79df700d',1,'Station']]],
+  ['getname_10',['getName',['../class_station.html#a9a11b1e1e738259b77c6b76e17816a99',1,'Station']]],
+  ['getpath_11',['getPath',['../class_station.html#ae03d24cb766c8d84422fee8252c527ae',1,'Station']]],
+  ['getreverse_12',['getReverse',['../class_trip.html#a34e1224e44615f4cf148f347256d6cc3',1,'Trip']]],
+  ['getservice_13',['getService',['../class_trip.html#ae3f390f72451291fe3e5de2382ceba63',1,'Trip']]],
+  ['getsourcestation_14',['getSourceStation',['../class_trip.html#acb6db1d02b41cf845a33a153fa4913ce',1,'Trip']]],
+  ['getstation_15',['getStation',['../class_graph.html#a48d89acf76ee7d9fd2b40ef319d6e5d5',1,'Graph']]],
+  ['getstations_16',['getStations',['../class_graph.html#a0c18707d54711b50011680b857b23993',1,'Graph']]],
+  ['gettownship_17',['getTownship',['../class_station.html#ac54be77b706865fa7713fa0c386bf558',1,'Station']]]
+];
