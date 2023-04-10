@@ -57,7 +57,7 @@ void Menu::display() {
                 displayMaxTrains();
                 break;
             case 7:
-                displayTest();
+                displayMinCost();
                 break;
             case 8:
                 displayMaxFlowWithFailure();
@@ -374,7 +374,7 @@ void Menu::displayMaxTrains() {
     cout << endl << graph.findStation(stationName)->getName() << " can have " << max << " trains arriving at the same time\n" << endl << endl;
 }
 
-void Menu::displayTest() {
+void Menu::displayMinCost() {
     string srcString, destString;
     Station * src;
     Station * dest;
