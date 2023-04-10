@@ -35,7 +35,9 @@ When you choose one of the options from the menu displayed in the code snippet y
 
 7. Maximum concurrent trains with minimal cost for the company between two stations: This option will calculate and display the maximum number of concurrent trains that can travel between two specified stations in the railway network, while minimizing the cost for the company based on predefined cost factors.
 
-8. Quit: This option will exit the menu loop and terminate the program.
+8. Maximum number of trains with reduced connectivity: This option will calculate and display the maximum number of trains that can be scheduled in the railway network, considering reduced connectivity between stations or other limitations.
+
+9. Quit: This option will exit the menu loop and terminate the program.
 
 ‎ ‎ ‎ ‎
 
