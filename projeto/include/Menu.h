@@ -78,6 +78,8 @@ private:
      */
     void displayTest();
 
+    void displayMinCost();
+
     void displayMaxFlowWithFailure();
 };
 
