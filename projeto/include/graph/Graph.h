@@ -197,7 +197,7 @@ public:
     */
     static int findCost(const Trip& trip);
 
-    int maxFlowWithFailure(vector<pair<string,string>> affected,string source, string dest);
+    int maxFlowWithFailure(vector<pair<string,string>> affected, string src, string dest);
 
 
     private:
@@ -219,7 +219,7 @@ public:
     */
     unordered_map<string, vector<Station*>> lines;
 
-    void removeSegment(string source, string dest);
+    void removeSegment(string src, string dest);
 
 };
 

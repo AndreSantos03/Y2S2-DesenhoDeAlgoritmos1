@@ -74,9 +74,9 @@ private:
     void displayMaxTrains();
 
     /**
-     * @brief Displays a test function for debugging or testing purposes.
+         * @brief Displays maximum concurrent trains with minimal cost for the company between two stations.
      */
-    void displayTest();
+    void displayMinCost();
 };
 
 

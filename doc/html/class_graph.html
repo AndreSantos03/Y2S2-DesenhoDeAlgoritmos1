@@ -72,6 +72,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_graph-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Graph Class Reference</div></div>
@@ -124,6 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7334fc0b4ea50ee6d8541416387728e2"><td class="memItemLeft" align="right" valign="top">pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a7334fc0b4ea50ee6d8541416387728e2">minCost</a> (<a class="el" href="class_station.html">Station</a> *src, <a class="el" href="class_station.html">Station</a> *dest)</td></tr>
 <tr class="memdesc:a7334fc0b4ea50ee6d8541416387728e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the maximum concurrent trains with minimal cost for the company between two stations.  <a href="class_graph.html#a7334fc0b4ea50ee6d8541416387728e2">More...</a><br /></td></tr>
 <tr class="separator:a7334fc0b4ea50ee6d8541416387728e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976d7dfcbf1bb3bd9f09cb691ca8d3b2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a976d7dfcbf1bb3bd9f09cb691ca8d3b2">maxFlowWithFailure</a> (vector&lt; pair&lt; string, string &gt; &gt; affected, string src, string dest)</td></tr>
+<tr class="separator:a976d7dfcbf1bb3bd9f09cb691ca8d3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -136,6 +139,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a34a31c674a6b0a41d25e7e50fe5ab8ab"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a34a31c674a6b0a41d25e7e50fe5ab8ab">findCost</a> (const <a class="el" href="class_trip.html">Trip</a> &amp;trip)</td></tr>
 <tr class="memdesc:a34a31c674a6b0a41d25e7e50fe5ab8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the cost of a given trip based on its service type.  <a href="class_graph.html#a34a31c674a6b0a41d25e7e50fe5ab8ab">More...</a><br /></td></tr>
 <tr class="separator:a34a31c674a6b0a41d25e7e50fe5ab8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab2f92ed2ee6c509a94e4353a9389130c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#ab2f92ed2ee6c509a94e4353a9389130c">removeSegment</a> (string src, string dest)</td></tr>
+<tr class="separator:ab2f92ed2ee6c509a94e4353a9389130c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -526,6 +534,40 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a976d7dfcbf1bb3bd9f09cb691ca8d3b2" name="a976d7dfcbf1bb3bd9f09cb691ca8d3b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a976d7dfcbf1bb3bd9f09cb691ca8d3b2">&#9670;&#160;</a></span>maxFlowWithFailure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Graph::maxFlowWithFailure </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; pair&lt; string, string &gt; &gt;&#160;</td>
+          <td class="paramname"><em>affected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6fea1945c3c623a8bec9e3e46698589f" name="a6fea1945c3c623a8bec9e3e46698589f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6fea1945c3c623a8bec9e3e46698589f">&#9670;&#160;</a></span>maxTrains()</h2>
 
@@ -639,6 +681,42 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab2f92ed2ee6c509a94e4353a9389130c" name="ab2f92ed2ee6c509a94e4353a9389130c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2f92ed2ee6c509a94e4353a9389130c">&#9670;&#160;</a></span>removeSegment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Graph::removeSegment </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="abff5856bd975e6f15a8263088518b01d" name="abff5856bd975e6f15a8263088518b01d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abff5856bd975e6f15a8263088518b01d">&#9670;&#160;</a></span>top_k_max_flow_district()</h2>
 
@@ -747,8 +825,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>projeto/include/graph/<a class="el" href="_graph_8h_source.html">Graph.h</a></li>
-<li>projeto/src/graph/<a class="el" href="_graph_8cpp.html">Graph.cpp</a></li>
+<li>C:/Users/diogo/CLionProjects/DA_Project/projeto/include/graph/<a class="el" href="_graph_8h_source.html">Graph.h</a></li>
+<li>C:/Users/diogo/CLionProjects/DA_Project/projeto/src/graph/<a class="el" href="_graph_8cpp.html">Graph.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
