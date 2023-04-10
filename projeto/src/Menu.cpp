@@ -20,7 +20,7 @@ void Menu::display() {
              << "3. Shortest path between two stations\n"
              << "4. Display the pair of stations that needs trains\n"
              << "5. Top-k municipalities/districts with highest budget needs\n"
-             << "6. Max number of trains that can arrive at a train simultaneously\n"
+             << "6. Max number of trains that can arrive at a station simultaneously\n"
              << "7. Maximum concurrent trains with minimal cost for the company between two stations\n"
              << "8. Quit\n"
              << "Enter your choice: ";
