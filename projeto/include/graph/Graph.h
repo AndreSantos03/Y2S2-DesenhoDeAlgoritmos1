@@ -76,15 +76,6 @@ public:
     static void removeEdge(Station *source, Station *destination);
 
     /**
-     * @brief Retrieves the map of lines in the graph.
-     *
-     * This method retrieves the map of lines in the graph.
-     *
-     * @return The map of lines in the graph.
-     */
-    const unordered_map<string, vector<Station *>> &getLines() const;
-
-    /**
      * @brief Adds a station to a line in the graph.
      *
      * This method adds a station to a line in the graph.
@@ -97,7 +88,8 @@ public:
     /**
     * @brief Finds a station in the graph by name.
     *
-     * This method finds a station in the graph by its name.
+    * This method finds a station in the graph by its name.
+    * The time complexity of this function is O(|V|), where |V| is the number of vertices (stations) in the graph.
     *
     * @param src The name of the station to be found.
     * @return Pointer to the found station, or nullptr if not found.
@@ -108,6 +100,7 @@ public:
     * @brief Performs Dijkstra's algorithm to find the shortest path between two stations.
     *
     * This method performs Dijkstra's algorithm to find the shortest path between two stations in the graph.
+    * The time complexity of this function is O(|V|^2), where |V| is the number of vertices (stations) in the graph.
     *
     * @param src Pointer to the source station.
     * @param dest Pointer to the destination station.
@@ -119,6 +112,7 @@ public:
     * @brief Calculates the maximum flow between two stations using the Edmonds-Karp algorithm.
     *
     * This method calculates the maximum flow between two stations in the graph using the Edmonds-Karp algorithm.
+    * The time complexity of this function is O(|V| * |E|^2), where |V| is the number of vertices (stations) in the graph, and |E| is the number of edges (trips) in the graph.
     *
     * @param src Pointer to the source station.
     * @param dest Pointer to the destination station.
@@ -131,6 +125,7 @@ public:
     *
     * This method performs the Breadth-First Search algorithm for the Edmonds-Karp algorithm
     * to find an augmenting path from the source to the destination station.
+    * The time complexity of this function is O(|V| * |E|^2), where |V| is the number of vertices (stations) in the graph, and |E| is the number of edges (trips) in the graph.
     *
     * @param src Pointer to the source station.
     * @param dest Pointer to the destination station.
@@ -142,6 +137,7 @@ public:
     * @brief Retrieves the top k districts with the highest maximum flow.
     *
     * This method retrieves the top k districts with the highest maximum flow in the graph.
+    * The time complexity of this function is O(|V|^2), where |V| is the number of vertices (stations) in the graph.
     *
     * @param k The number of top districts to retrieve.
     * @return A vector of pairs, where each pair contains the name of a district and its corresponding maximum flow.
@@ -152,6 +148,7 @@ public:
     * @brief Retrieves the top k municipalities with the highest maximum flow.
     *
     * This method retrieves the top k municipalities with the highest maximum flow in the graph.
+    * The time complexity of this function is O(|V|^2), where |V| is the number of vertices (stations) in the graph.
     *
     * @param k The number of top municipalities to retrieve.
     * @return A vector of pairs, where each pair contains the name of a municipality and its corresponding maximum flow.
@@ -162,6 +159,7 @@ public:
     * @brief Calculates the maximum number of trains that can be scheduled at a station.
     *
     * This method calculates the maximum number of trains that can arrive at a train simultaneously.
+    * The time complexity of this function is O(|V|^2), where |V| is the number of vertices (stations) in the graph.
     *
     * @param stationName The name of the station.
     * @return The maximum number of trains that can arrive at a train simultaneously.
@@ -172,9 +170,8 @@ public:
     * @brief Calculate the maximum concurrent trains with minimal cost for the company between two stations.
     *
     * The `minCost()` function calculates the maximum concurrent trains that can travel between two stations,
-    * while minimizing the cost for the company. It takes two pointers to `Station` objects as arguments,
-    * representing the source station (`src`) and the destination station (`dest`), respectively.
-    *
+    * while minimizing the cost for the company.
+    * The time complexity of this function is O(|V| * |E|^2), where |V| is the number of vertices (stations) in the graph and |E| is the number of edges.
     * @param src Pointer to the source station.
     * @param dest Pointer to the destination station.
     *
@@ -197,8 +194,35 @@ public:
     */
     static int findCost(const Trip& trip);
 
+    /**
+     * @brief Removes a segment (edge) between two train stations in the graph.
+     *
+     * The time complexity of this function is O(|V| + |E|), where |V| is the number of vertices (stations) and |E| is the number of adjacent edges (trips) for the source station.
+     *
+     * @param src The name of the source train station.
+     * @param dest The name of the destination train station.
+     * @return void
+     */
     void removeSegment(const string& src, const string& dest);
 
+
+    /**
+     * @brief Calculates the maximum flow in the graph with potential segment failures.
+     *
+     * The time complexity of this function is O(V^2 * E + n + |E| + m), where |V| is the number of vertices
+     * (stations) and |E| is the number of adjacent edges (trips) for the source station,
+     * n is determined by the size of the stations data structure within the Graph class, which presumably stores
+     * information about the stations in the graph. The complexity of finding a station using the findStation()
+     * function, as mentioned in a previous response, is assumed to be O(n) in this case and m is the number of
+     * affected segments in the affected vector, which is passed as a parameter to the function. The loop that
+     * iterates over the affected segments in the affected vector has a time complexity of O(m), as it simply
+     * iterates over the elements in the vector.
+     *
+     * @param affected A vector of pairs representing the source and destination stations of the potentially failed segments.
+     * @param src The name of the source train station.
+     * @param dest The name of the destination train station.
+     * @return The maximum flow between the source and destination stations, considering the potentially failed segments.
+     */
     int maxFlowWithFailure(const vector<pair<string,string>>& affected, const string& src, const string& dest);
 
 

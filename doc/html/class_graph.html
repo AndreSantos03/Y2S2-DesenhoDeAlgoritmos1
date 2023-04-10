@@ -72,7 +72,6 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_graph-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Graph Class Reference</div></div>
@@ -95,9 +94,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a48d89acf76ee7d9fd2b40ef319d6e5d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_station.html">Station</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a48d89acf76ee7d9fd2b40ef319d6e5d5">getStation</a> (const string &amp;basicString)</td></tr>
 <tr class="memdesc:a48d89acf76ee7d9fd2b40ef319d6e5d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a station from the graph by name.  <a href="class_graph.html#a48d89acf76ee7d9fd2b40ef319d6e5d5">More...</a><br /></td></tr>
 <tr class="separator:a48d89acf76ee7d9fd2b40ef319d6e5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ed0f2f6f3aa04b52dcd18672a8201de"><td class="memItemLeft" align="right" valign="top">const unordered_map&lt; string, vector&lt; <a class="el" href="class_station.html">Station</a> * &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a9ed0f2f6f3aa04b52dcd18672a8201de">getLines</a> () const</td></tr>
-<tr class="memdesc:a9ed0f2f6f3aa04b52dcd18672a8201de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the map of lines in the graph.  <a href="class_graph.html#a9ed0f2f6f3aa04b52dcd18672a8201de">More...</a><br /></td></tr>
-<tr class="separator:a9ed0f2f6f3aa04b52dcd18672a8201de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a30f0023656702114809f6d823da9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a88a30f0023656702114809f6d823da9e">addLines</a> (const string &amp;lineName, <a class="el" href="class_station.html">Station</a> *station)</td></tr>
 <tr class="memdesc:a88a30f0023656702114809f6d823da9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a station to a line in the graph.  <a href="class_graph.html#a88a30f0023656702114809f6d823da9e">More...</a><br /></td></tr>
 <tr class="separator:a88a30f0023656702114809f6d823da9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,8 +121,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7334fc0b4ea50ee6d8541416387728e2"><td class="memItemLeft" align="right" valign="top">pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a7334fc0b4ea50ee6d8541416387728e2">minCost</a> (<a class="el" href="class_station.html">Station</a> *src, <a class="el" href="class_station.html">Station</a> *dest)</td></tr>
 <tr class="memdesc:a7334fc0b4ea50ee6d8541416387728e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the maximum concurrent trains with minimal cost for the company between two stations.  <a href="class_graph.html#a7334fc0b4ea50ee6d8541416387728e2">More...</a><br /></td></tr>
 <tr class="separator:a7334fc0b4ea50ee6d8541416387728e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a976d7dfcbf1bb3bd9f09cb691ca8d3b2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a976d7dfcbf1bb3bd9f09cb691ca8d3b2">maxFlowWithFailure</a> (vector&lt; pair&lt; string, string &gt; &gt; affected, string src, string dest)</td></tr>
-<tr class="separator:a976d7dfcbf1bb3bd9f09cb691ca8d3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac17fef69a998982742e0046c29620953"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#ac17fef69a998982742e0046c29620953">removeSegment</a> (const string &amp;src, const string &amp;dest)</td></tr>
+<tr class="memdesc:ac17fef69a998982742e0046c29620953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a segment (edge) between two train stations in the graph.  <a href="class_graph.html#ac17fef69a998982742e0046c29620953">More...</a><br /></td></tr>
+<tr class="separator:ac17fef69a998982742e0046c29620953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a596173ba4d9161c564a2b874adf0199e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a596173ba4d9161c564a2b874adf0199e">maxFlowWithFailure</a> (const vector&lt; pair&lt; string, string &gt; &gt; &amp;affected, const string &amp;src, const string &amp;dest)</td></tr>
+<tr class="memdesc:a596173ba4d9161c564a2b874adf0199e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the maximum flow in the graph with potential segment failures.  <a href="class_graph.html#a596173ba4d9161c564a2b874adf0199e">More...</a><br /></td></tr>
+<tr class="separator:a596173ba4d9161c564a2b874adf0199e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -139,11 +139,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a34a31c674a6b0a41d25e7e50fe5ab8ab"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a34a31c674a6b0a41d25e7e50fe5ab8ab">findCost</a> (const <a class="el" href="class_trip.html">Trip</a> &amp;trip)</td></tr>
 <tr class="memdesc:a34a31c674a6b0a41d25e7e50fe5ab8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the cost of a given trip based on its service type.  <a href="class_graph.html#a34a31c674a6b0a41d25e7e50fe5ab8ab">More...</a><br /></td></tr>
 <tr class="separator:a34a31c674a6b0a41d25e7e50fe5ab8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:ab2f92ed2ee6c509a94e4353a9389130c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#ab2f92ed2ee6c509a94e4353a9389130c">removeSegment</a> (string src, string dest)</td></tr>
-<tr class="separator:ab2f92ed2ee6c509a94e4353a9389130c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -310,7 +305,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Performs the Breadth-First Search algorithm for the Edmonds-Karp algorithm. </p>
-<p >This method performs the Breadth-First Search algorithm for the Edmonds-Karp algorithm to find an augmenting path from the source to the destination station.</p>
+<p >This method performs the Breadth-First Search algorithm for the Edmonds-Karp algorithm to find an augmenting path from the source to the destination station. The time complexity of this function is O(|V| * |E|^2), where |V| is the number of vertices (stations) in the graph, and |E| is the number of edges (trips) in the graph.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">src</td><td>Pointer to the source station. </td></tr>
@@ -349,7 +344,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Performs Dijkstra's algorithm to find the shortest path between two stations. </p>
-<p >This method performs Dijkstra's algorithm to find the shortest path between two stations in the graph.</p>
+<p >This method performs Dijkstra's algorithm to find the shortest path between two stations in the graph. The time complexity of this function is O(|V|^2), where |V| is the number of vertices (stations) in the graph.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">src</td><td>Pointer to the source station. </td></tr>
@@ -414,7 +409,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Finds a station in the graph by name. </p>
-<p >This method finds a station in the graph by its name.</p>
+<p >This method finds a station in the graph by its name. The time complexity of this function is O(|V|), where |V| is the number of vertices (stations) in the graph.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">src</td><td>The name of the station to be found. </td></tr>
@@ -422,27 +417,6 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the found station, or nullptr if not found. </dd></dl>
-
-</div>
-</div>
-<a id="a9ed0f2f6f3aa04b52dcd18672a8201de" name="a9ed0f2f6f3aa04b52dcd18672a8201de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ed0f2f6f3aa04b52dcd18672a8201de">&#9670;&#160;</a></span>getLines()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unordered_map&lt; string, vector&lt; <a class="el" href="class_station.html">Station</a> * &gt; &gt; &amp; Graph::getLines </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retrieves the map of lines in the graph. </p>
-<p >This method retrieves the map of lines in the graph.</p>
-<dl class="section return"><dt>Returns</dt><dd>The map of lines in the graph. </dd></dl>
 
 </div>
 </div>
@@ -522,7 +496,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calculates the maximum flow between two stations using the Edmonds-Karp algorithm. </p>
-<p >This method calculates the maximum flow between two stations in the graph using the Edmonds-Karp algorithm.</p>
+<p >This method calculates the maximum flow between two stations in the graph using the Edmonds-Karp algorithm. The time complexity of this function is O(|V| * |E|^2), where |V| is the number of vertices (stations) in the graph, and |E| is the number of edges (trips) in the graph.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">src</td><td>Pointer to the source station. </td></tr>
@@ -534,8 +508,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a976d7dfcbf1bb3bd9f09cb691ca8d3b2" name="a976d7dfcbf1bb3bd9f09cb691ca8d3b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a976d7dfcbf1bb3bd9f09cb691ca8d3b2">&#9670;&#160;</a></span>maxFlowWithFailure()</h2>
+<a id="a596173ba4d9161c564a2b874adf0199e" name="a596173ba4d9161c564a2b874adf0199e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596173ba4d9161c564a2b874adf0199e">&#9670;&#160;</a></span>maxFlowWithFailure()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -543,19 +517,19 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">int Graph::maxFlowWithFailure </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; pair&lt; string, string &gt; &gt;&#160;</td>
+          <td class="paramtype">const vector&lt; pair&lt; string, string &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>affected</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>dest</em>&#160;</td>
         </tr>
         <tr>
@@ -565,6 +539,18 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calculates the maximum flow in the graph with potential segment failures. </p>
+<p >The time complexity of this function is O(V^2 * E + n + |E| + m), where |V| is the number of vertices (stations) and |E| is the number of adjacent edges (trips) for the source station, n is determined by the size of the stations data structure within the <a class="el" href="class_graph.html" title="Class representing the graph data structure.">Graph</a> class, which presumably stores information about the stations in the graph. The complexity of finding a station using the <a class="el" href="class_graph.html#a8f8c21b14050d13985efc6d3be6658dd" title="Finds a station in the graph by name.">findStation()</a> function, as mentioned in a previous response, is assumed to be O(n) in this case and m is the number of affected segments in the affected vector, which is passed as a parameter to the function. The loop that iterates over the affected segments in the affected vector has a time complexity of O(m), as it simply iterates over the elements in the vector.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">affected</td><td>A vector of pairs representing the source and destination stations of the potentially failed segments. </td></tr>
+    <tr><td class="paramname">src</td><td>The name of the source train station. </td></tr>
+    <tr><td class="paramname">dest</td><td>The name of the destination train station. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The maximum flow between the source and destination stations, considering the potentially failed segments. </dd></dl>
 
 </div>
 </div>
@@ -585,7 +571,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calculates the maximum number of trains that can be scheduled at a station. </p>
-<p >This method calculates the maximum number of trains that can arrive at a train simultaneously.</p>
+<p >This method calculates the maximum number of trains that can arrive at a train simultaneously. The time complexity of this function is O(|V|^2), where |V| is the number of vertices (stations) in the graph.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stationName</td><td>The name of the station. </td></tr>
@@ -623,8 +609,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calculate the maximum concurrent trains with minimal cost for the company between two stations. </p>
-<p >The <code><a class="el" href="class_graph.html#a7334fc0b4ea50ee6d8541416387728e2" title="Calculate the maximum concurrent trains with minimal cost for the company between two stations.">minCost()</a></code> function calculates the maximum concurrent trains that can travel between two stations, while minimizing the cost for the company. It takes two pointers to <code><a class="el" href="class_station.html" title="Class representing a train station.">Station</a></code> objects as arguments, representing the source station (<code>src</code>) and the destination station (<code>dest</code>), respectively.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >The <code><a class="el" href="class_graph.html#a7334fc0b4ea50ee6d8541416387728e2" title="Calculate the maximum concurrent trains with minimal cost for the company between two stations.">minCost()</a></code> function calculates the maximum concurrent trains that can travel between two stations, while minimizing the cost for the company. The time complexity of this function is O(|V| * |E|^2), where |V| is the number of vertices (stations) in the graph and |E| is the number of edges. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">src</td><td>Pointer to the source station. </td></tr>
     <tr><td class="paramname">dest</td><td>Pointer to the destination station.</td></tr>
@@ -681,25 +666,22 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab2f92ed2ee6c509a94e4353a9389130c" name="ab2f92ed2ee6c509a94e4353a9389130c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2f92ed2ee6c509a94e4353a9389130c">&#9670;&#160;</a></span>removeSegment()</h2>
+<a id="ac17fef69a998982742e0046c29620953" name="ac17fef69a998982742e0046c29620953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac17fef69a998982742e0046c29620953">&#9670;&#160;</a></span>removeSegment()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Graph::removeSegment </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>dest</em>&#160;</td>
         </tr>
         <tr>
@@ -708,12 +690,18 @@ Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Removes a segment (edge) between two train stations in the graph. </p>
+<p >The time complexity of this function is O(|V| + |E|), where |V| is the number of vertices (stations) and |E| is the number of adjacent edges (trips) for the source station.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>The name of the source train station. </td></tr>
+    <tr><td class="paramname">dest</td><td>The name of the destination train station. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -734,7 +722,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves the top k districts with the highest maximum flow. </p>
-<p >This method retrieves the top k districts with the highest maximum flow in the graph.</p>
+<p >This method retrieves the top k districts with the highest maximum flow in the graph. The time complexity of this function is O(|V|^2), where |V| is the number of vertices (stations) in the graph.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">k</td><td>The number of top districts to retrieve. </td></tr>
@@ -762,7 +750,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves the top k municipalities with the highest maximum flow. </p>
-<p >This method retrieves the top k municipalities with the highest maximum flow in the graph.</p>
+<p >This method retrieves the top k municipalities with the highest maximum flow in the graph. The time complexity of this function is O(|V|^2), where |V| is the number of vertices (stations) in the graph.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">k</td><td>The number of top municipalities to retrieve. </td></tr>

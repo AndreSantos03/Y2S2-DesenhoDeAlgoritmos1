@@ -83,32 +83,16 @@ double Trip::getCapacity() const {
     return capacity;
 }
 
-void Trip::setCapacity(double capaci) {
-    Trip::capacity = capaci;
-}
-
 const string &Trip::getService() const {
     return service;
-}
-
-void Trip::setService(const string &servic) {
-    Trip::service = servic;
 }
 
 Station *Trip::getSourceStation() const {
     return sourceStation;
 }
 
-void Trip::setSourceStation(Station *sourceStation_) {
-    Trip::sourceStation = sourceStation_;
-}
-
 Station *Trip::getDestinationStation() const {
     return destinationStation;
-}
-
-void Trip::setDestinationStation(Station *destinationStation_) {
-    Trip::destinationStation = destinationStation_;
 }
 
 Trip *Trip::getReverse() const {

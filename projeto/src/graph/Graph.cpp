@@ -46,11 +46,6 @@ void Graph::addLines(const string &lineName, Station *station) {
 }
 
 
-const unordered_map<string, vector<Station *>> &Graph::getLines() const {
-    return lines;
-}
-
-
 Station* Graph::findStation(const string& src) {
     for (const auto& station: stations) {
         if (station.first == src) {

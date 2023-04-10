@@ -70,7 +70,7 @@ void Menu::display() {
                 cout << "Invalid choice, please try again.\n";
                 break;
         }
-    } while (choice != 8);
+    } while (choice != 9);
 }
 
 void Menu::displayStationInformation() {
@@ -421,7 +421,7 @@ void Menu::displayMaxFlowWithFailure() {
             cout << "Returning..." << endl << endl;
             return;
         }
-        affected.push_back({srcString,destString});
+        affected.emplace_back(srcString,destString);
     }
     cout << "Insert Source Station Name:";
     getline(cin >> ws, srcString);

@@ -204,22 +204,10 @@ public:
     [[nodiscard]] double getCapacity() const;
 
     /**
-     * @brief Set the capacity of the trip.
-     * @param capacity Capacity of the trip.
-     */
-    void setCapacity(double capaci);
-
-    /**
      * @brief Get the service type of the trip.
      * @return Service type of the trip.
      */
     [[nodiscard]] const string &getService() const;
-
-    /**
-     * @brief Set the service type of the trip.
-     * @param service Service type of the trip.
-     */
-    void setService(const string &servic);
 
     /**
      * @brief Get the source station of the trip.
@@ -228,22 +216,10 @@ public:
     [[nodiscard]] Station *getSourceStation() const;
 
     /**
-     * @brief Set the source station of the trip.
-     * @param sourceStation Pointer to the source station.
-     */
-    void setSourceStation(Station *sourceStation_);
-
-    /**
      * @brief Get the destination station of the trip.
      * @return Pointer to the destination station.
      */
     [[nodiscard]] Station *getDestinationStation() const;
-
-    /**
-     * @brief Set the destination station of the trip.
-     * @param destinationStation Pointer to the destination station.
-     */
-    void setDestinationStation(Station *destinationStation_);
 
     /**
      * @brief Get the reverse trip of the current trip.

@@ -4,5 +4,5 @@ var searchData=
   ['readnetworkcsv_1',['readNetworkCSV',['../class_read_data.html#ac56b1d4f19830c4174ba12da6134d5a4',1,'ReadData']]],
   ['readstationscsv_2',['readStationsCSV',['../class_read_data.html#a9914ab555c75b5a7f052dafcb47e44c3',1,'ReadData']]],
   ['removeedge_3',['removeEdge',['../class_graph.html#a1c91610b319792ea81e74e85dabc3c0c',1,'Graph::removeEdge()'],['../class_station.html#ad61c2d75b4c41b18af850e7f1ca16a25',1,'Station::removeEdge()']]],
-  ['removesegment_4',['removeSegment',['../class_graph.html#ab2f92ed2ee6c509a94e4353a9389130c',1,'Graph']]]
+  ['removesegment_4',['removeSegment',['../class_graph.html#ac17fef69a998982742e0046c29620953',1,'Graph']]]
 ];

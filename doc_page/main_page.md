@@ -15,10 +15,7 @@ add stations to specific lines, perform shortest path algorithms
 between stations. Additionally, the class has methods to retrieve 
 information about stations, lines, maximum flow in districts and 
 municipalities, and calculate the maximum capacity of trains that 
-can be scheduled at a station. This class can be used as a 
-foundation for implementing a railway network management system, 
-allowing for train flow control, calculation of shorter routes, and 
-optimization of transportation capacity.
+can be scheduled at a station.
 
 ‎ ‎ ‎ ‎
 
