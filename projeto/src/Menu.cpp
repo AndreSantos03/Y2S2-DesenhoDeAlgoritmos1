@@ -22,7 +22,8 @@ void Menu::display() {
              << "5. Top-k municipalities/districts with highest budget needs\n"
              << "6. Max number of trains that can arrive at a station simultaneously\n"
              << "7. Maximum concurrent trains with minimal cost for the company between two stations\n"
-             << "8. Quit\n"
+             << "8. Maximum number of trains with reduced connectivity\n"
+             << "9. Quit\n"
              << "Enter your choice: ";
         cin >> choice;
         cout << endl;
@@ -59,6 +60,9 @@ void Menu::display() {
                 displayTest();
                 break;
             case 8:
+                displayMaxFlowWithFailure();
+                break;
+            case 9:
                 cout << "Quitting...\n" << endl;
                 break;
 
@@ -392,6 +396,57 @@ void Menu::displayTest() {
     }
     const pair<int, int> min_cost = graph.minCost(src, dest);
     cout << endl << "Only " << min_cost.first << " trains can travel concurrently between " << src->getName() << " and " << dest->getName() << " with a minimum cost of " << min_cost.second << " euros.\n" << endl;
+}
+
+void Menu::displayMaxFlowWithFailure() {
+    vector<pair<string,string>> affected;
+    string srcString, destString;
+    Station * src;
+    Station * dest;
+    while(true) {
+        cout << "Insert Source Station Name or insert 'r' to get max flow:";
+        getline(cin >> ws, srcString);
+        src = graph.findStation(srcString);
+        if(srcString == "r") break;
+        if (src == nullptr) {
+            cout << srcString << " is not a train station." << endl;
+            cout << "Returning..." << endl << endl;
+            return;
+        }
+        cout << "Insert Destination Station Name:";
+        getline(cin >> ws, destString);
+        dest = graph.findStation(destString);
+        if (dest == nullptr) {
+            cout << destString << " is not a train station." << endl;
+            cout << "Returning..." << endl << endl;
+            return;
+        }
+        affected.push_back({srcString,destString});
+    }
+    cout << "Insert Source Station Name:";
+    getline(cin >> ws, srcString);
+    src = graph.findStation(srcString);
+    if(src== nullptr){
+        cout << srcString << " is not a train station." <<endl;
+        cout << "Returning..."<<endl<<endl;
+        return;
+    }
+    cout << "Insert Destination Station Name:";
+    getline(cin >> ws, destString);
+    dest = graph.findStation(destString);
+    if(dest== nullptr){
+        cout << destString << " is not a train station." <<endl;
+        cout << "Returning..."<<endl<<endl;
+        return;
+    }
+
+    int flow = graph.maxFlowWithFailure(affected,srcString,destString);
+    if(flow == 0){
+        cout << "There's no path between " << srcString << " and " << destString << endl<< endl;
+    }
+    else{
+        cout << flow << " trains have the capacity to travel concurrently between " << srcString << " and " << destString << "." << endl << endl;
+    }
 }
 
 

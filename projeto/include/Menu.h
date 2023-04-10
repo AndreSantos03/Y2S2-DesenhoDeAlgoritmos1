@@ -77,6 +77,8 @@ private:
      * @brief Displays a test function for debugging or testing purposes.
      */
     void displayTest();
+
+    void displayMaxFlowWithFailure();
 };
 
 
