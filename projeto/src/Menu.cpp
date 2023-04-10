@@ -403,43 +403,23 @@ void Menu::displayMaxFlowWithFailure() {
     string srcString, destString;
     Station * src;
     Station * dest;
-    while(true) {
-        cout << "Insert Source Station Name or insert 'r' to get max flow:";
-        getline(cin >> ws, srcString);
-        src = graph.findStation(srcString);
-        if(srcString == "r") break;
-        if (src == nullptr) {
-            cout << srcString << " is not a train station." << endl;
-            cout << "Returning..." << endl << endl;
-            return;
-        }
-        cout << "Insert Destination Station Name:";
-        getline(cin >> ws, destString);
-        dest = graph.findStation(destString);
-        if (dest == nullptr) {
-            cout << destString << " is not a train station." << endl;
-            cout << "Returning..." << endl << endl;
-            return;
-        }
-        affected.emplace_back(srcString,destString);
-    }
     cout << "Insert Source Station Name:";
     getline(cin >> ws, srcString);
     src = graph.findStation(srcString);
-    if(src== nullptr){
-        cout << srcString << " is not a train station." <<endl;
-        cout << "Returning..."<<endl<<endl;
+    if (src == nullptr) {
+        cout << srcString << " is not a train station." << endl;
+        cout << "Returning..." << endl << endl;
         return;
     }
     cout << "Insert Destination Station Name:";
     getline(cin >> ws, destString);
     dest = graph.findStation(destString);
-    if(dest== nullptr){
-        cout << destString << " is not a train station." <<endl;
-        cout << "Returning..."<<endl<<endl;
+    if (dest == nullptr) {
+        cout << destString << " is not a train station." << endl;
+        cout << "Returning..." << endl << endl;
         return;
     }
-
+    affected.emplace_back(srcString,destString);
     int flow = graph.maxFlowWithFailure(affected,srcString,destString);
     if(flow == 0){
         cout << "There's no path between " << srcString << " and " << destString << endl<< endl;
