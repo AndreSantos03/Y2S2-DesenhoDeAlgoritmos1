@@ -340,7 +340,7 @@ pair<int, int> Graph::minCost(Station* src, Station* dest) {
     return {maxFlow, minCost};
 }
 
-void Graph::removeSegment(string src, string dest) {
+void Graph::removeSegment(const string& src, const string& dest) {
     vector<Trip*> adjList = findStation(src)->getEdge();
     Station * destS = findStation(dest);
 
@@ -351,10 +351,10 @@ void Graph::removeSegment(string src, string dest) {
     }
 }
 
-int Graph::maxFlowWithFailure(vector<pair<string,string>> affected, string src, string dest) {
+int Graph::maxFlowWithFailure(const vector<pair<string,string>>& affected, const string& src, const string& dest) {
     Graph reducedGraph = *this;
 
-    for(auto p : affected){
+    for(const auto& p : affected){
         reducedGraph.removeSegment(p.first,p.second);
     }
     return reducedGraph.maxFlow(findStation(src), findStation(dest));
