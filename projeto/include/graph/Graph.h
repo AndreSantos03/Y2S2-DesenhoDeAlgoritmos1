@@ -197,6 +197,9 @@ public:
     */
     static int findCost(const Trip& trip);
 
+    int maxFlowWithFailure(vector<pair<string,string>> affected,string source, string dest);
+
+
     private:
     /**
     * @brief The map of stations in the graph.
@@ -215,6 +218,8 @@ public:
     * of lines in the graph that are added using the `addLines()` function.
     */
     unordered_map<string, vector<Station*>> lines;
+
+    void removeSegment(string source, string dest);
 
 };
 

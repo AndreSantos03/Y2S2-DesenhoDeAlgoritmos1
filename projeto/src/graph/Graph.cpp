@@ -339,3 +339,24 @@ pair<int, int> Graph::minCost(Station* src, Station* dest) {
 
     return {maxFlow, minCost};
 }
+
+void Graph::removeSegment(string source, string dest) {
+    vector<Trip*> adjList = findStation(source)->getEdge();
+    Station * destS = findStation(dest);
+
+    for (Trip* e : adjList) {
+        if (e->getDestinationStation() == destS) {
+            removeEdge(findStation(source),destS);
+        }
+    }
+}
+
+int Graph::maxFlowWithFailure(vector<pair<string,string>> affected,string source, string dest) {
+    Graph reducedGraph = *this;
+
+    for(auto p : affected){
+        reducedGraph.removeSegment(p.first,p.second);
+    }
+    return reducedGraph.maxFlow(findStation(source), findStation(dest));
+}
+
